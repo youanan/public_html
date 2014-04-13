@@ -1,0 +1,4 @@
+wiki
+====
+
+my vimwiki
