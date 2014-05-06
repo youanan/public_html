@@ -1,0 +1,19 @@
+$(document).ready(function(){
+  $("li:contains('红色')").click(function(){
+   $(this).css("color","red")
+  })
+  $("li:contains('绿色')").click(function(){
+   $(this).css("color","green")
+  })
+  $("li:contains('蓝色')").click(function(){
+   $(this).css("color","blue")
+  })
+  $("li").dblclick(function(){
+   $(this).removeAttr("style")
+  })
+});
+$(document).ready(function(){
+ $("p").click(function(){
+  $(this).hide();
+ });
+});
