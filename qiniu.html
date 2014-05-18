@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
   <head>
-    <title>Win8系统</title>
+    <title>qiniu</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="this is youanan's wiki, design by vimwiki">
@@ -48,9 +48,60 @@
 
       <div class="starter-template">
         
-<h2 id="toc_0.1">Win8系统</h2>
-<h3 id="toc_0.1.1">Win8系统异常解决</h3>
-<hr />
+<h1 id="toc_1">七牛存储空间</h1>
+<h2 id="toc_1.1">1、什么是七牛</h2>
+<p>
+  七牛是一个免费云存储，就是传说中的免费网盘。我用来做图床
+</p>
+
+<p>
+<img src="http://assets.qiniu.com/qiniu-white.png" title="七牛" />
+</p>
+<ul>
+<li>
+官方网址: <a href="http://www.qiniu.com">http://www.qiniu.com</a>
+
+<li>
+邀请注册:<a href="https://portal.qiniu.com/signup?code=3llo7utlvs6du：">https://portal.qiniu.com/signup?code=3llo7utlvs6du：</a>
+
+</ul>
+<h2 id="toc_1.2">2、上传工具</h2>
+
+<p>
+<img src="http://youanan.qiniudn.com/youanan_201405184.png" title="七牛上传工具" />
+</p>
+<h3 id="toc_1.2.1">qrsync使用方法</h3>
+<ul>
+<li>
+官方教程:<a href="http://developer.qiniu.com/docs/v6/tools/qrsync.html">http://developer.qiniu.com/docs/v6/tools/qrsync.html</a>
+
+<li>
+qrsync是绿色软件，解压到任意文件夹内即可；
+
+<li>
+conf.json文件的配置按官方教程，我的配置如下：
+
+<li>
+<img src="http://youanan.qiniudn.com/youanan_201405189.png" title="youanan的conf.json" />
+
+<li>
+conf.json配置好后，放在程序文件夹内，见下图：
+
+<li>
+<img src="http://youanan.qiniudn.com/youanan_201405188.png" qrsync目录截图 />
+
+<li>
+增加了一个批处理bat程序，点击一下，自动开始秒传,复制以下代码，粘贴在记事记本，另存为qiniu.bat,并放进与qrsync.exe&amp;conf.json相同的目录
+<pre class="brush: cpp">
+   @echo on
+   start qrsync.exe conf.json
+</pre>
+
+</ul>
+<p>
+the end ,以后，我只要把图片放进conf.json指定的目录，运行一下bat，图片就到七牛网盘上：
+<img src="http://youanan.qiniudn.com/youanan_2014051810.png" title="七牛内容管理页面" />
+</p>
 
         
       </div>
