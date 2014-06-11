@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <title>config</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="this is youanan's wiki, design by vimwiki">
+    <meta name="author" content="youanan">
+    <link rel="shortcut icon" href="..//favicon.ico">
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../../css/starter-template.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">youanan</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="../index.html">Home</a></li>
+            <li><a href="../diary/diary.html">Diary</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="starter-template">
+        
+<h1 id="toc_1" class="justcenter">Pro/E配置文件</h1>
+ 
+<ol>
+<li>
+mass_property_calculate:automatic——设置后，在工程图中再生两次可完成重量更新
+
+<li>
+menu_translation both——设置下拉菜单时为中英文双语菜单
+
+<li>
+tol_mode nominal——设置显示的尺寸没有公差
+
+<li>
+trail_dir D:\Program Files\trail——设置轨迹文件存放路径
+
+<li>
+web_browser_homepage about:blank——设置浏览器首页为空白页
+
+<li>
+drawing_setup_file D:\Program Files\peizhi\gb.dtl——设置工程图配置文件
+
+<li>
+system_colors_file D:\Program Files\peizhi\syscol.scl——设置系统颜色配置文件
+
+<li>
+pdf_use_pentable yes——设置输出PDF时使用系统线宽设置
+
+<li>
+pro_format_dir D:\Program Files\peizhi\format——设置工程图格式文件路径
+
+<li>
+template_solidpart D:\Program Files\peizhi\template\startpart.prt.5——设置零件模板
+
+<li>
+template_designasm D:\Program Files\peizhi\template\startasm.asm.3——设置组件模板
+
+<li>
+model_note_display no——设置注释不显示
+
+<li>
+pro_unit_length unit_mm——设置长度缺省单位为mm
+
+<li>
+pro_unit_mass unit_kilogram——设置质量缺省单位为kg
+
+<li>
+pro_unit_sys mmks——设置缺省单位系统为mmks（毫米千克秒）
+
+<li>
+bell no——关闭提示音
+
+<li>
+default_dec_places 3——设置所有模型模式中非角度尺寸的缺省小数位数
+
+<li>
+default_ang_dec_places 2——设置角度尺寸小数位数
+
+<li>
+sketcher_dec_places 2——设置草绘时的尺寸小数位数
+
+<li>
+default_draw_scale 1:1——设置工程图中缺省的绘图比例，即插入一般视图时默认为1比1
+
+<li>
+save_drawing_picture_file embed——设置将图片嵌入工程图中，可以实现工程图打开时预览
+
+<li>
+search_path_file D:\Program Files\peizhi\search.pro——设置搜索文件
+
+<li>
+tangent_edge_display no——设置相切边不显示
+
+<li>
+set_menu_width 12——设置下拉菜单的宽度
+
+<li>
+intf_out_layer part_layer——设置图层方式（影响转CAD）
+
+<li>
+dxf_export_mapping_file D:\Program Files\peizhi\dxf_export.pro——指定转CAD的转换设置文件
+
+<li>
+mdl_tree_cfg_file D:\Program Files\peizhi\tree.cfg——设置模型树配置文件
+
+<li>
+allow_anatomic_features yes——设置自动再生特征
+
+<li>
+text_height_factor 40——设置系统坐标及基准面显示的字体大小
+
+<li>
+pro_note_dir D:\Program Files\peizhi\note——设置注释文件路径
+
+<li>
+rename_drawings_with_object both——设置保存副本时自动复制与零件或组件相关的工程图
+
+<li>
+use_8_plotter_pens yes——设置使用8笔（影响打印）
+
+<li>
+mass_property_calculate automatic——设置质量自动计算
+
+<li>
+format_setup_file D:\Program Files\peizhi\format.dtl——设置工程图格式文件的配置文件
+
+<li>
+pro_symbol_dir D:\Program Files\peizhi\symbol——设置工程图用的符号
+
+<li>
+tolerance_standard iso——设置公差标准为ISO
+
+<li>
+pro_plot_config_dir D:\Program Files\peizhi\print_pcf——设置打印机打印样式文件路径
+
+<li>
+pro_material_dir D:\Program Files\peizhi\material——设置材料库文件路径
+
+<li>
+pen_table_file D:\Program Files\peizhi\table.pnt——设置打印线宽配置文件
+
+<li>
+step_export_format ap214_cd——设置输出step格式文件时，保留原模型颜色
+
+<li>
+dxf_out_scale_views yes——输出为DWG或DXF时不管工程图中的比例，自动重新缩放为1比1 
+
+</ol>
+
+        
+      </div>
+      <footer>
+          <p>&copy; Company 2014  <img src="http://youanan.qiniudn.com/youanan.com/youananemail.png"  alt="联系我" border="0"></p>
+      </footer>
+
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+    <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"> -->
+    <script type="text/javascript" src="../../js/jqueryforcss.js"></script>
+    <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+  </body>
+</html>
+
