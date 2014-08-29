@@ -51,8 +51,19 @@
 <h1 id="toc_1">Pro/E知识大全</h1>
 <ol>
 <li>
-<a href="proe/config.html">config.pro</a>配置文件
+<a href="proe/config2.o.html">config2.0配置文件</a>
 
+<li>
+<a href="proe_layer.html">proe图层</a>
+
+<li>
+将proe图形放到word文档里
+
+<ul>
+<li>
+先在PROE中在线框模式，另存CGM格式，在WORD中插入
+
+</ul>
 </ol>
 
         
@@ -71,6 +82,23 @@
     <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"> -->
     <script type="text/javascript" src="../js/jqueryforcss.js"></script>
     <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+
+    <!---    -->
+<script type="text/javascript">
+$(document).ready(function(){
+  $("#b01").click(function(){
+  htmlobj=$.ajax({url:"test1.html",async:false});
+  $("#myDiv").html(htmlobj.responseText);
+  });
+});
+</script>
+    <!--  -->
+
+
+
+
+
+
   </body>
 </html>
 

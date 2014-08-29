@@ -48,14 +48,16 @@
 
       <div class="starter-template">
         
-<h1 id="toc_1">vim</h1>
-<p>
-vim 常用命令
-</p>
-<ul>
+<h1 id="toc_1">vim 知识大全</h1>
+
+<ol>
+<li>
+<a href="vim/0001.html">VIM基本操作</a>
+
 <li>
 
-</ul>
+
+</ol>
 
         
       </div>
@@ -73,6 +75,23 @@ vim 常用命令
     <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"> -->
     <script type="text/javascript" src="../js/jqueryforcss.js"></script>
     <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+
+    <!---    -->
+<script type="text/javascript">
+$(document).ready(function(){
+  $("#b01").click(function(){
+  htmlobj=$.ajax({url:"test1.html",async:false});
+  $("#myDiv").html(htmlobj.responseText);
+  });
+});
+</script>
+    <!--  -->
+
+
+
+
+
+
   </body>
 </html>
 

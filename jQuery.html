@@ -49,7 +49,7 @@
       <div class="starter-template">
         
 <h1 id="toc_1">jQuery</h1>
-<ol>
+<ul>
 <li>
 在线教程
 
@@ -78,7 +78,13 @@ $(document).ready(function(){
 </pre>
 
 </ul>
-</ol>
+</ul>
+
+<ul>
+<li>
+百度jQuery库:<a href="http://libs.baidu.com/jquery/1.7.2/jquery.min.js">http://libs.baidu.com/jquery/1.7.2/jquery.min.js</a>
+
+</ul>
 
         
       </div>
@@ -96,6 +102,23 @@ $(document).ready(function(){
     <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"> -->
     <script type="text/javascript" src="../js/jqueryforcss.js"></script>
     <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+
+    <!---    -->
+<script type="text/javascript">
+$(document).ready(function(){
+  $("#b01").click(function(){
+  htmlobj=$.ajax({url:"test1.html",async:false});
+  $("#myDiv").html(htmlobj.responseText);
+  });
+});
+</script>
+    <!--  -->
+
+
+
+
+
+
   </body>
 </html>
 

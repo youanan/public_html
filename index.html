@@ -85,7 +85,14 @@
 <li>
 网址导航: <a href="site.html">site</a>
 
+<li>
+<a href="tsfh.html">特殊符号</a>
+
 </ul>
+<hr />
+<p>
+<a href="sketch.html">素描</a>
+</p>
 
         
       </div>
@@ -103,6 +110,23 @@
     <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"> -->
     <script type="text/javascript" src="../js/jqueryforcss.js"></script>
     <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+
+    <!---    -->
+<script type="text/javascript">
+$(document).ready(function(){
+  $("#b01").click(function(){
+  htmlobj=$.ajax({url:"test1.html",async:false});
+  $("#myDiv").html(htmlobj.responseText);
+  });
+});
+</script>
+    <!--  -->
+
+
+
+
+
+
   </body>
 </html>
 

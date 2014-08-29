@@ -50,10 +50,11 @@
         
 <h1 id="toc_1" class="justcenter">Pro/E配置文件</h1>
  
+<p>
+!mass_property_calculate:automatic
+!——设置后，在工程图中再生两次可完成重量更新
+</p>
 <ol>
-<li>
-mass_property_calculate:automatic——设置后，在工程图中再生两次可完成重量更新
-
 <li>
 menu_translation both——设置下拉菜单时为中英文双语菜单
 
@@ -2236,6 +2237,23 @@ train_file_path E:\ptctmpw3\trail
     <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"> -->
     <script type="text/javascript" src="../../js/jqueryforcss.js"></script>
     <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+
+    <!---    -->
+<script type="text/javascript">
+$(document).ready(function(){
+  $("#b01").click(function(){
+  htmlobj=$.ajax({url:"test1.html",async:false});
+  $("#myDiv").html(htmlobj.responseText);
+  });
+});
+</script>
+    <!--  -->
+
+
+
+
+
+
   </body>
 </html>
 
