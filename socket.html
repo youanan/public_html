@@ -66,6 +66,9 @@
 <a href="socket/cord-color.html">单相交流电配线标准用色</a>
 
 <li>
+<a href="Socket-english.html">插座用英语</a>
+
+<li>
 <a href="socket/iec60884-1_2002.html">IEC 60884-1</a> 家用和类似用途插头插座 第1部分:通用要求
 
 </ol>
@@ -86,6 +89,23 @@
     <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"> -->
     <script type="text/javascript" src="../js/jqueryforcss.js"></script>
     <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+
+    <!---    -->
+<script type="text/javascript">
+$(document).ready(function(){
+  $("#b01").click(function(){
+  htmlobj=$.ajax({url:"test1.html",async:false});
+  $("#myDiv").html(htmlobj.responseText);
+  });
+});
+</script>
+    <!--  -->
+
+
+
+
+
+
   </body>
 </html>
 

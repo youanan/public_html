@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
   <head>
-    <title>git</title>
+    <title>DNS</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="this is youanan's wiki, design by vimwiki">
@@ -48,184 +48,165 @@
 
       <div class="starter-template">
         
-<h1 id="toc_1">git</h1>
+<h1 id="toc_1">DNS设置</h1>
 <hr />
-<h2 id="toc_1.1">git本地设置</h2>
-<p>
-git安装完成后的操作
-</p>
+
+<h3 id="toc_1.0.1">刷新本地DNS的方法</h3>
 <ol>
 <li>
-设置config信息
-
-<ol>
-<li>
-<code>git config --global user.name "yourname"</code> <em>//设置用户名称</em>
+用 <em>win+R</em> 快捷键打开系统运行窗口,输入 <strong>CMD</strong> 命令,回车确定；
 
 <li>
-<code>git config --global user.email "youremail"</code>` <em>//设置用户邮箱</em>
+在命令窗口打开后，输入： <strong>ipconfig /flushdns</strong>  ;
 
 <li>
-<code>git config --list</code>  <em>//查看config配置的信息</em>
+回车运行；
 
 </ol>
-<li>
-设置SSH keys文件
 
-<ol>
-<li>
-首先检测文件是否存在，如存则跳过此步骤
-
+<h3 id="toc_1.0.2">公共DNS列表</h3>
 <ul>
 <li>
-<code>cd ~/.ssh</code> <em>//进入ssh文件夹</em>
+google公共DNS
 
-<li>
-<code>ls</code>  <em>//查看文件夹内有哪些文件，关键是找.rsa文件</em>
-
-</ul>
-<li>
-将原来的SSH keys备份并删除
-
-<ul>
-<li>
-<code>mkdir key_backup</code>    <em>新建一个key</em>_<em>backup的文件夹s</em>
-
-<li>
-<code>cp id_rsa* key_backup</code> <em>//复制id</em>_<em>rsa开头的文件到key</em>_<em>backup文件夹内</em> 
-
-<li>
-<code>rm id_rsa*</code>  <em>//删除现有id</em>_<em>rsa开头的文件</em>
-
-</ul>
-<li>
-创建一个新的SSH key
-
-<ul>
-<li>
-<code>ssh-keygen -t rsa -C "yourgithub's email"</code>
-
-<li>
- <em>//回车，默认</em>
-
-<li>
- <em>//回车，使用默认路径</em>
-
-<li>
- <em>//输入key密码,不输入回车则不需要密码</em>
-
-</ul>
-<li>
-将is_rsa.pub的内容复制到github&gt;settings&gt;SSH keys中
-
-<li>
-测试是否可以与github正确连接
-
-<ul>
-<li>
-<code>ssh -T git@github.com</code> <em>//出现Hi......开头的英文，就是连接正常</em>
-
-</ul>
-</ol>
-</ol>
-<h2 id="toc_1.2">git的常用命令</h2>
 <ol>
 <li>
-status : <em>//查看本地的修改状态</em>
+: <strong>8.8.8.8</strong>
 
 <li>
-add .  : <em>//将所有文件添加到列队中</em>
-
-<li>
-git commit -m "xx"  :<em>//提交修改备注</em>
-
-<li>
-git push origin gh-pages :<em>//上传到网上的分支</em>
-
-<li>
-git remote add origin git@github.com:youanan/wiki.git <em>//将远程 <strong>git地址</strong> 更名为 <strong>origin</strong> 简称，</em>
+: <strong>8.8.4.4</strong>
 
 </ol>
+<li>
+阿里公共DNS: <a href="http://www.alidns.com">http://www.alidns.com</a>
 
-<hr />
-<h2 id="toc_1.3">git config list</h2>
 <ol>
 <li>
-core.symlinks=false
+: <strong>223.5.5.5</strong>
 
 <li>
-core.autocrlf=ture
-
-<li>
-color.diff=auto
-
-<li>
-color.status=auto
-
-<li>
-color.branch=auto
-
-<li>
-color.interactive=true
-
-<li>
-pack.packsizelimit=2g
-
-<li>
-help.format=html
-
-<li>
-http.sslcainfo=/bin/curl-ca-bundle.crt
-
-<li>
-sendemail.smtpserver=/bin/msmtp.exe
-
-<li>
-diff.astextplain.textconv=astextplain
-
-<li>
-rebase.autosquash=true
-
-<li>
-user.email="email"
-
-<li>
-user.name="name"
-
-<li>
-core.repositoryformatversion=0
-
-<li>
-core.filemode=false
-
-<li>
-core.bare=false
-
-<li>
-core.logallrefupdates=true
-
-<li>
-core.symlinks=false
-
-<li>
-core.ignorecase=true
-
-<li>
-core.hidedotfiles=dotGitOnly
-
-<li>
-remote.origin.url="git@github.com:xxxxx/xxx.git"
-
-<li>
-remote.origin.fetch=+refs/head\*<strong>:refs/remotes/origin\</strong>
-
-<li>
-branch.gh-pages.remote=origin
-
-<li>
-branch.gh-pages.merge=refs/heads/gh-pages
+: <strong>223.6.6.6</strong>
 
 </ol>
+<li>
+114公众DNS: <a href="http://www.114dns.com">http://www.114dns.com</a>
+
+<ol>
+<li>
+: <strong>114.114.114.114</strong>
+
+<li>
+: <strong>114.114.115.115</strong>
+
+<li>
+: <strong>114.114.114.119</strong>  <em>//安全版</em>
+
+<li>
+: <strong>114.114.115.116</strong>  <em>//安全版</em>
+
+<li>
+: <strong>114.114.114.110</strong>  <em>//家庭版</em>
+
+<li>
+: <strong>114.114.115.110</strong>  <em>//家庭版</em>
+
+</ol>
+<li>
+v2EX公共DNS: <a href="http://dns.v2ex.com">http://dns.v2ex.com</a>      <em>//可用于App Store加速</em>
+
+<ol>
+<li>
+: <strong>199.91.73.222</strong>
+
+<li>
+: <strong>178.79.131.110</strong>
+
+</ol>
+<li>
+OpenDNS: <a href="http://www.opendns.com">http://www.opendns.com</a>
+
+<ol>
+<li>
+: <strong>208.67.222.222</strong>
+
+<li>
+: <strong>208.67.220.220</strong>
+
+<li>
+: <strong>208.67.220.222</strong>
+
+<li>
+: <strong>208.67.222.220</strong>
+
+<li>
+: <strong>208.67.222.123</strong>   <em>//OpenDNS Family</em>
+
+<li>
+: <strong>208.67.220.123</strong>   <em>//OpenDNS Family</em>
+
+</ol>
+<li>
+Dyn DNS: <a href="http://www.dyndns.com">http://www.dyndns.com</a>  <em>//由乌克兰服务商提供的免费DNS服务器</em>
+
+<ol>
+<li>
+: <strong>216.146.35.35</strong>
+
+<li>
+: <strong>216.146.36.36</strong>
+
+</ol>
+<li>
+Comodo DNS: <a href="http://www.comodo.com/secure-dns">http://www.comodo.com/secure-dns</a>  <em>//科摩多</em>
+
+<ol>
+<li>
+: <strong>8.26.56.26</strong>
+
+<li>
+: <strong>8.20.247.20</strong>
+
+</ol>
+<li>
+One DNS: <a href="http://oendns.net">http://oendns.net</a> 
+
+<ol>
+<li>
+: <strong>112.124.47.27</strong>
+
+<li>
+: <strong>114.215.126.16</strong>
+
+</ol>
+<li>
+OpenerDNS: <a href="http://openerdns.com">http://openerdns.com</a> 
+
+<ol>
+<li>
+: <strong>112.124.47.27</strong>
+
+<li>
+: <strong>114.215.126.16</strong>
+
+</ol>
+<li>
+DNS派: <a href="http://www.dnspai.com">http://www.dnspai.com</a> 
+
+<ol>
+<li>
+: <strong>101.226.4.6</strong>   <em>//电信/移动/铁通</em>
+
+<li>
+: <strong>218.30.118.6</strong>  <em>//电信/移动/铁通</em>
+
+<li>
+: <strong>123.125.81.6</strong>  <em>//联通</em>
+
+<li>
+: <strong>140.207.198.6</strong>  <em>//联通</em>
+
+</ol>
+</ul>
 
         
       </div>
