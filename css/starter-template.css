@@ -20,3 +20,11 @@ text-align:center
 em{
   color: green;
   font-style: normal;
+  }
+.page-nav{
+    float:right;
+    width:auto;
+    margin-right:36px;
+    padding:12px 36px 12px 0;
+    clear:both;
+}

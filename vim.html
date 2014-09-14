@@ -48,15 +48,45 @@
 
       <div class="starter-template">
         
-<h1 id="toc_1">vim 知识大全</h1>
 
+<h2 id="toc_0.1">VIM技巧</h2>
+<hr />
 <ol>
 <li>
-<a href="vim/0001.html">VIM基本操作</a>
+显示TAB键
+
+<ul>
+<li>
+:set list
 
 <li>
+:set listchars=tab:&gt;-,trail:-
 
+</ul>
+<li>
+剪切/移动一行至指定一行(例如移动该行到第5行)
 
+<ul>
+<li>
+:mo 5
+
+</ul>
+<li>
+复制一行至指定一行(例如复制该行到第5行)
+
+<ul>
+<li>
+:co 5
+
+</ul>
+<li>
+配置配色文件,语法:colorscheme name;
+
+<ul>
+<li>
+colorscheme darkblue
+
+</ul>
 </ol>
 
         
@@ -75,23 +105,6 @@
     <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"> -->
     <script type="text/javascript" src="../js/jqueryforcss.js"></script>
     <script type="text/javascript" src="../js/bootstrap.min.js"></script>
-
-    <!---    -->
-<script type="text/javascript">
-$(document).ready(function(){
-  $("#b01").click(function(){
-  htmlobj=$.ajax({url:"test1.html",async:false});
-  $("#myDiv").html(htmlobj.responseText);
-  });
-});
-</script>
-    <!--  -->
-
-
-
-
-
-
   </body>
 </html>
 

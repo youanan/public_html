@@ -1,19 +1,9 @@
 $(document).ready(function(){
-  $("li:contains('红色')").click(function(){
-   $(this).css("color","red")
-  })
-  $("li:contains('绿色')").click(function(){
-   $(this).css("color","green")
-  })
-  $("li:contains('蓝色')").click(function(){
-   $(this).css("color","blue")
-  })
-  $("li").dblclick(function(){
-   $(this).removeAttr("style")
-  })
-});
-$(document).ready(function(){
- $("p").click(function(){
-  $(this).hide();
+  $(".toc").addClass("well page-nav");
+ $("table").wrap('<div class="table-responsive"/>');
+ $("table").addClass("table table-bordered table-striped table-hover");
+ $("a[href^='http*://']").each(function(){
+ this.target="_blank";
+$(".toc").addClass("well page-nav");
  });
 });
