@@ -59,6 +59,10 @@
 <li><a href="#toc_1.0.4">4.铸造和模具设计</a>
 <li><a href="#toc_1.0.5">5.颜色</a>
 <li><a href="#toc_1.0.6">6.数据交换</a>
+<ul>
+<li><a href="#toc_1.0.6.1">6.1 常规</a>
+<li><a href="#toc_1.0.6.2">6.2 2D交换</a>
+</ul>
 <li><a href="#toc_1.0.7">7.数据管理</a>
 <li><a href="#toc_1.0.8">8.尺寸和公差</a>
 <li><a href="#toc_1.0.9">9.绘图</a>
@@ -92,10 +96,69 @@
  
 <h3 id="toc_1.0.1">1.应用程序编程界面</h3>
 <h3 id="toc_1.0.2">2.组件</h3>
+<ul>
+<li>
+在单独窗口显示装配元件
+<pre>
+ []
+comp_assemble_start
+</pre>
+
+</ul>
 <h3 id="toc_1.0.3">3.组件处理</h3>
 <h3 id="toc_1.0.4">4.铸造和模具设计</h3>
 <h3 id="toc_1.0.5">5.颜色</h3>
+<ul>
+<li>
+指定色彩映射文件的目录路径(.map)
+<pre>
+pro_colormap_path
+</pre>
+
+<li>
+指定系统颜色文件
+<pre>
+system_colors_file
+</pre>
+
+</ul>
 <h3 id="toc_1.0.6">6.数据交换</h3>
+<h4 id="toc_1.0.6.1">6.1 常规</h4>
+<ul>
+<li>
+指定输出step时的格式
+<pre>
+    step_export_format
+</pre>
+
+</ul>
+<h4 id="toc_1.0.6.2">6.2 2D交换</h4>
+<ul>
+<li>
+指定输出DWG的文件版本
+<pre>
+dwg_export_format
+</pre>
+
+<li>
+指定输出dxf的文件版本
+<pre>
+dxf_export_format
+</pre>
+
+<li>
+指定是否将绘图比例输出为DWG文件
+<pre>
+dxf_out_drawing_scale
+</pre>
+
+<li>
+输出到dxf或dwg时,是否缩放绘图视图
+<pre>
+dxf_out_scale_views
+</pre>
+
+</ul>
 <h3 id="toc_1.0.7">7.数据管理</h3>
 <h3 id="toc_1.0.8">8.尺寸和公差</h3>
 <h3 id="toc_1.0.9">9.绘图</h3>
