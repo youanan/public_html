@@ -107,6 +107,14 @@ comp_assemble_start
 </ul>
 <h3 id="toc_1.0.3">3.组件处理</h3>
 <h3 id="toc_1.0.4">4.铸造和模具设计</h3>
+<ul>
+<li>
+设计catalog目录(零件库必设项)
+<pre>
+pro_catalog_dir (路径)
+</pre>
+
+</ul>
 <h3 id="toc_1.0.5">5.颜色</h3>
 <ul>
 <li>
@@ -162,11 +170,81 @@ dxf_out_scale_views
 <h3 id="toc_1.0.7">7.数据管理</h3>
 <h3 id="toc_1.0.8">8.尺寸和公差</h3>
 <h3 id="toc_1.0.9">9.绘图</h3>
+<ul>
+<li>
+设置工程图配置文件
+<pre>
+pro_dtl_setup_dir (工程图配置文件目录)
+</pre>
+
+</ul>
 <h3 id="toc_1.0.10">10.机电</h3>
 <h3 id="toc_1.0.11">11.环境</h3>
+<ul>
+<li>
+显示完整路径文件名及版本号
+<pre>
+display_full_object_path yes
+</pre>
+
+</ul>
 <h3 id="toc_1.0.12">12.特征</h3>
+
+<ul>
+<li>
+自定义UDF库目录
+<pre>
+pro_group_dir (UDF目录路径)
+</pre>
+
+</ul>
 <h3 id="toc_1.0.13">13.FEM</h3>
 <h3 id="toc_1.0.14">14.文件存储和检索</h3>
+<ul>
+<li>
+用户模板的目录
+<pre>
+start_model_dir (Templates目录路径)
+</pre>
+
+<li>
+自定义默认装配体模板
+<pre>
+template_designasm (后缀为asm的模板文件路径文件名)
+</pre>
+
+<li>
+自定义默认工程图模板
+<pre>
+template_drawing(后缀为drw的工程图模板文件路径文件名)
+</pre>
+
+<li>
+自定义默认钣金模板
+<pre>
+template_sheetmetalpart(后缀为prt的钣金模板文件路径文件名)
+</pre>
+
+<li>
+自定义默认零件模板
+<pre>
+template_solidpart(后缀为prt的零件模板文件路径文件名)
+</pre>
+
+<li>
+设置何时保存文件
+<pre>
+!changed-当零件发生改动后产生新的版本号,不修改不保存.
+save_objects changed
+</pre>
+
+<li>
+设置零件库目录
+<pre>
+pro_library_dir (零件库目录)
+</pre>
+
+</ul>
 <h3 id="toc_1.0.15">15.层</h3>
 <h3 id="toc_1.0.16">16.制造</h3>
 <h3 id="toc_1.0.17">17.机构</h3>
@@ -179,6 +257,20 @@ dxf_out_scale_views
 <h3 id="toc_1.0.24">24.模拟</h3>
 <h3 id="toc_1.0.25">25.草绘</h3>
 <h3 id="toc_1.0.26">26.系统</h3>
+<ul>
+<li>
+设置每次启动proe,产生的trail存放目录
+<pre>
+trail_dir (目录)
+</pre>
+
+<li>
+设置proe内置浏览器主页地址
+<pre>
+web_browser_homepage (网址/或本地目录网页文件地址)
+</pre>
+
+</ul>
 <h3 id="toc_1.0.27">27.用户界面</h3>
 <h3 id="toc_1.0.28">28.焊接</h3>
 <h3 id="toc_1.0.29">29.杂项</h3>
