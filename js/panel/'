@@ -1,0 +1,10 @@
+/*
+* 自定义JS样式
+* 
+* 
+*/
+
+$(document).ready(function(){
+ $("p:contains(Warning)").unwrap("<p></p>");
+ $("p:contains(Warning)").wrap("<div></div>");
+});
