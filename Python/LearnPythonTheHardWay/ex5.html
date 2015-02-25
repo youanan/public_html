@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <title>习题 5: 更多的变量和打印</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="this is youanan's wiki, design by vimwiki">
+    <meta name="author" content="youanan">
+    <link rel="shortcut icon" href="../../favicon.ico">
+
+    <!-- Bootstrap core CSS -->
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.2/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <!--local Bootstrap core CSS -->
+    <link href="../../bootstrap/3.3.2/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+
+
+    <!--local google-code-prettify.CSS -->
+    <link href="../../css/prettify.css" type="text/css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../../css/starter-template.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="http://youanan.com">youanan</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="../../index.html">Home</a></li>
+            <li><a href="../../diary/diary.html">Diary</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="starter-template">
+        
+
+<h1 id="toc_1">习题 5: 更多的变量和打印</h1>
+
+<p>
+我们现在要键入更多的变量并且把它们打印出来。这次我们将使用一个叫“格式化字符串(format string)”的东西. 每一次你使用 " 把一些文本引用起来，你就建立了一个字符串。 字符串是程序将信息展示给人的方式。你可以打印它们，可以将它们写入文件，还可以将它们发送给网站服务器，很多事情都是通过字符串交流实现的。
+</p>
+
+<p>
+字符串是非常好用的东西，所以再这个练习中你将学会如何创建包含变量内容的字符串。使用专门的格式和语法把变量的内容放到字符串里，相当于来告诉 python ：“嘿，这是一个格式化字符串，把这些变量放到那几个位置。”
+</p>
+
+<p>
+一样的，即使你读不懂这些内容，只要一字不差地键入就可以了。
+</p>
+
+<pre python>
+my_name = 'Zed A. Shaw'
+my_age = 35 # not a lie
+my_height = 74 # inches
+my_weight = 180 # lbs
+my_eyes = 'Blue'
+my_teeth = 'White'
+my_hair = 'Brown'
+
+print "Let's talk about %s." % my_name
+print "He's %d inches tall." % my_height
+print "He's %d pounds heavy." % my_weight
+print "Actually that's not too heavy."
+print "He's got %s eyes and %s hair." % (my_eyes, my_hair)
+print "His teeth are usually %s depending on the coffee." % my_teeth
+
+# this line is tricky, try to get it exactly right
+print "If I add %d, %d, and %d I get %d." % (
+my_age, my_height, my_weight, my_age + my_height + my_weight)
+</pre>
+
+<p>
+~~~~如果你使用了非 ASCII 字符而且碰到了编码错误，记得在最顶端加一行 # -- coding: utf-8 -- 。
+</p>
+
+<h2 id="toc_1.1">你应该看到的结果</h2>
+
+<pre python>
+$ python ex5.py
+Let's talk about Zed A. Shaw.
+He's 74 inches tall.
+He's 180 pounds heavy.
+Actually that's not too heavy.
+He's got Blue eyes and Brown hair.
+His teeth are usually White depending on the coffee.
+If I add 35, 74, and 180 I get 289.
+$
+</pre>
+
+<h2 id="toc_1.2">加分习题</h2>
+
+<ol>
+<li>
+修改所有的变量名字，把它们前面的''my_''去掉。确认将每一个地方的都改掉，不只是你使用''=''赋值过的地方。
+
+<li>
+试着使用更多的格式化字符。例如 %r 就是是非常有用的一个，它的含义是“不管什么都打印出来”。
+
+<li>
+在网上搜索所有的 Python 格式化字符。
+
+<li>
+试着使用变量将英寸和磅转换成厘米和千克。不要直接键入答案。使用 Python 的计算功能来完成。
+
+</ol>
+
+        
+      </div>
+      <footer>
+          <p>&copy; Company 2015  <img src="http://youanan.qiniudn.com/youanan.com/youananemail.png"  alt="联系我" border="0"></p>
+      </footer>
+
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+    <script src="../../jquery/1.11.2/jquery.min.js"></script>
+    <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"> -->
+    <script type="text/javascript" src="http://cdn.bootcss.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../js/panel/python_panel.js"></script>
+    <script type="text/javascript" src="../../js/google-code-prettify/prettify.js"></script>
+  </body>
+</html>
+

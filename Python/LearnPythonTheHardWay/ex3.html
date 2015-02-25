@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <title>习题 3: 数字和数学计算</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="this is youanan's wiki, design by vimwiki">
+    <meta name="author" content="youanan">
+    <link rel="shortcut icon" href="../../favicon.ico">
+
+    <!-- Bootstrap core CSS -->
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.2/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <!--local Bootstrap core CSS -->
+    <link href="../../bootstrap/3.3.2/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+
+
+    <!--local google-code-prettify.CSS -->
+    <link href="../../css/prettify.css" type="text/css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../../css/starter-template.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="http://youanan.com">youanan</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="../../index.html">Home</a></li>
+            <li><a href="../../diary/diary.html">Diary</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="starter-template">
+        
+<h1 id="toc_1">习题 3: 数字和数学计算</h1>
+
+<p>
+每一种编程语言都包含处理数字和进行数学计算的方法。不必担心，程序员经常撒谎说他们是多么牛的数学天才，其实他们根本不是。如果他们真是数学天才，他们早就去从事数学相关的行业了，而不是写写广告程序和社交网络游戏，从人们身上偷赚点小钱而已。
+</p>
+
+<p>
+这章练习里有很多的数学运算符号。我们来看一遍它们都叫什么名字。你要一边写一边念出它们的名字来，直到你念烦了为止。名字如下：
+</p>
+
+<ul>
+<li>
++ plus 加号
+
+<li>
+- minus 减号
+
+<li>
+/ slash 斜杠
+
+<li>
+* asterisk 星号
+
+<li>
+% percent 百分号
+
+<li>
+&lt; less-than 小于号
+
+<li>
+&gt; greater-than 大于号
+
+<li>
+&lt;= less-than-equal 小于等于号
+
+<li>
+&gt;= greater-than-equal 大于等于号
+
+</ul>
+
+<p>
+有没有注意到以上只是些符号，没有运算操作呢？写完下面的练习代码后，再回到上面的列表，写出每个符号的作用。例如 + 是用来做加法运算的。
+</p>
+
+<pre python>
+print "I will now count my chickens:"
+
+print "Hens", 25 + 30 / 6
+print "Roosters", 100 - 25 * 3 % 4
+
+print "Now I will count the eggs:"
+
+print 3 + 2 + 1 - 5 + 4 % 2 - 1 / 4 + 6
+
+print "Is it true that 3 + 2 &lt; 5 - 7?"
+
+print 3 + 2 &lt; 5 - 7
+
+print "What is 3 + 2?", 3 + 2
+print "What is 5 - 7?", 5 - 7
+
+print "Oh, that's why it's False."
+
+print "How about some more."
+
+print "Is it greater?", 5 &gt; -2
+print "Is it greater or equal?", 5 &gt;= -2
+print "Is it less or equal?", 5 &lt;= -2
+</pre>
+<h2 id="toc_1.1">你应该看到的结果</h2>
+<pre python>
+$ python ex3.py 
+I will now count my chickens:
+Hens 30
+Roosters 97
+Now I will count the eggs:
+7
+Is it true that 3 + 2 &lt; 5 - 7?
+False
+What is 3 + 2? 5
+What is 5 - 7? -2
+Oh, that's why it's False.
+How about some more.
+Is it greater? True
+Is it greater or equal? True
+Is it less or equal? False
+$
+</pre>
+<h2 id="toc_1.2">加分习题</h2>
+
+<ol>
+<li>
+使用 # 在代码每一行的前一行为自己写一个注解，说明一下这一行的作用。
+
+<li>
+记得开始时的 &lt;练习 0&gt; 吧？用里边的方法把 Python 运行起来，然后使用刚才学到的运算符号，把Python当做计算器玩玩。
+
+<li>
+自己找个想要计算的东西，写一个 .py 文件把它计算出来。
+
+<li>
+有没有发现计算结果是”错”的呢？计算结果只有整数，没有小数部分。研究一下这是为什么，搜索一下“浮点数(floating point number)”是什么东西。
+
+<li>
+使用浮点数重写一遍 ex3.py，让它的计算结果更准确(提示: 20.0 是一个浮点数)。
+
+</ol>
+
+        
+      </div>
+      <footer>
+          <p>&copy; Company 2015  <img src="http://youanan.qiniudn.com/youanan.com/youananemail.png"  alt="联系我" border="0"></p>
+      </footer>
+
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+    <script src="../../jquery/1.11.2/jquery.min.js"></script>
+    <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"> -->
+    <script type="text/javascript" src="http://cdn.bootcss.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../js/panel/python_panel.js"></script>
+    <script type="text/javascript" src="../../js/google-code-prettify/prettify.js"></script>
+  </body>
+</html>
+

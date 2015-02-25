@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <title>习题 6: 字符串(string)和文本</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="this is youanan's wiki, design by vimwiki">
+    <meta name="author" content="youanan">
+    <link rel="shortcut icon" href="../../favicon.ico">
+
+    <!-- Bootstrap core CSS -->
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.2/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <!--local Bootstrap core CSS -->
+    <link href="../../bootstrap/3.3.2/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+
+
+    <!--local google-code-prettify.CSS -->
+    <link href="../../css/prettify.css" type="text/css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../../css/starter-template.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="http://youanan.com">youanan</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="../../index.html">Home</a></li>
+            <li><a href="../../diary/diary.html">Diary</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="starter-template">
+        
+<h1 id="toc_1">习题 6: 字符串(string)和文本</h1>
+
+<p>
+虽然你已经在程序中写过字符串了，你还没学过它们的用处。在这章习题中我们将使用复杂的字符串来建立一系列的变量，从中你将学到它们的用途。首先我们解释一下字符串是什么 东西。
+</p>
+
+<p>
+字符串通常是指你想要展示给别人的、或者是你想要从程序里“导出”的一小段字符。Python 可以通过文本里的双引号 " 或者单引号 ' 识别出字符串来。这在你以前的 print 练习中你已经见过很多次了。如果你把单引号或者双引号括起来的文本放到 print 后面，它们就会被 python 打印出来。
+</p>
+
+<p>
+字符串可以包含格式化字符 %s，这个你之前也见过的。你只要将格式化的变量放到字符串中，再紧跟着一个百分号 % (percent)，再紧跟着变量名即可。唯一要注意的地方，是如果你想要在字符串中通过格式化字符放入多个变量的时候，你需要将变量放到 ( ) 圆括号(parenthesis)中，而且变量之间用 , 逗号(comma)隔开。就像你逛商店说“我要买牛奶、面包、鸡蛋、八宝粥”一样，只不过程序员说的是”(milk, eggs, bread, soup)”。
+</p>
+
+<p>
+我们将键入大量的字符串、变量、和格式化字符，并且将它们打印出来。我们还将练习使用简写的变量名。程序员喜欢使用恼人的难度的简写来节约打字时间，所以我们现在就提早学会这个，这样你就能读懂并且写出这些东西了。
+</p>
+
+
+<pre python>
+x = "There are %d types of people." % 10
+binary = "binary"
+do_not = "don't"
+y = "Those who know %s and those who %s." % (binary, do_not)
+
+print x
+print y
+
+print "I said: %r." % x
+print "I also said: '%s'." % y
+
+hilarious = False
+joke_evaluation = "Isn't that joke so funny?! %r"
+
+print joke_evaluation % hilarious
+
+w = "This is the left side of..."
+e = "a string with a right side."
+
+print w + e
+</pre>
+
+<h2 id="toc_1.1">你应该看到的结果</h2>
+
+<pre python>
+$ python ex6.py
+There are 10 types of people.
+Those who know binary and those who don't.
+I said: 'There are 10 types of people.'.
+I also said: 'Those who know binary and those who don't.'.
+Isn't that joke so funny?! False
+This is the left side of...a string with a right side.
+$
+</pre>
+
+<h2 id="toc_1.2">加分习题</h2>
+
+<ol>
+<li>
+通读程序，在每一行的上面写一行注解，给自己解释一下这一行的作用。
+
+<li>
+找到所有的”字符串包含字符串”的位置，总共有四个位置。
+
+<li>
+你确定只有四个位置吗？你怎么知道的？没准我在骗你呢。
+
+<li>
+解释一下为什么 w 和 e 用 + 连起来就可以生成一个更长的字符串。
+
+</ol>
+
+        
+      </div>
+      <footer>
+          <p>&copy; Company 2015  <img src="http://youanan.qiniudn.com/youanan.com/youananemail.png"  alt="联系我" border="0"></p>
+      </footer>
+
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+    <script src="../../jquery/1.11.2/jquery.min.js"></script>
+    <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"> -->
+    <script type="text/javascript" src="http://cdn.bootcss.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../js/panel/python_panel.js"></script>
+    <script type="text/javascript" src="../../js/google-code-prettify/prettify.js"></script>
+  </body>
+</html>
+

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <title>习题 4: 变量(variable)和命名</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="this is youanan's wiki, design by vimwiki">
+    <meta name="author" content="youanan">
+    <link rel="shortcut icon" href="../../favicon.ico">
+
+    <!-- Bootstrap core CSS -->
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.2/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <!--local Bootstrap core CSS -->
+    <link href="../../bootstrap/3.3.2/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+
+
+    <!--local google-code-prettify.CSS -->
+    <link href="../../css/prettify.css" type="text/css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../../css/starter-template.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="http://youanan.com">youanan</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="../../index.html">Home</a></li>
+            <li><a href="../../diary/diary.html">Diary</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="starter-template">
+        
+
+<h1 id="toc_1">习题 4: 变量(variable)和命名</h1>
+
+<p>
+你已经学会了 print 和算术运算。下一步你要学的是“变量”。在编程中，变量只不过是用来指代某个东西的名字。程序员通过使用变量名可以让他们的程序读起来更像英语。而且因为程序员的记性都不怎么地，变量名可以让他们更容易记住程序的内容。如果他们没有在写程序时使用好的变量名，在下一次读到原来写的代码时他们会大为头疼的。
+</p>
+
+<p>
+如果你被这章习题难住了的话，记得我们之前教过的：找到不同点、注意细节。
+</p>
+
+<ol>
+<li>
+在每一行的上面写一行注解，给自己解释一下这一行的作用。
+
+<li>
+倒着读你的 .py 文件。
+
+<li>
+朗读你的 .py 文件，将每个字符也朗读出来。
+
+</ol>
+
+<pre python>
+cars = 100
+space_in_a_car = 4.0
+drivers = 30
+passengers = 90
+cars_not_driven = cars - drivers
+cars_driven = drivers
+carpool_capacity = cars_driven * space_in_a_car
+average_passengers_per_car = passengers / cars_driven
+
+
+print "There are", cars, "cars available."
+print "There are only", drivers, "drivers available."
+print "There will be", cars_not_driven, "empty cars today."
+print "We can transport", carpool_capacity, "people today."
+print "We have", passengers, "to carpool today."
+print "We need to put about", average_passengers_per_car, "in each car."
+</pre>
+
+<p>
+~~~space_in_a_car 中的 _ 是 下划线(underscore) 字符。你要自己学会怎样打出这个字符来。这个符号在变量里通常被用作假想的空格，用来隔开单词。
+</p>
+
+<p>
+你应该看到的结果
+</p>
+<pre python>
+$ python ex4.py
+There are 100 cars available.
+There are only 30 drivers available.
+There will be 70 empty cars today.
+We can transport 120.0 people today.
+We have 90 to carpool today.
+We need to put about 3 in each car.
+$
+</pre>
+
+<h2 id="toc_1.1">加分习题</h2>
+
+<p>
+当我刚开始写这个程序时我犯了个错误，python 告诉我这样的错误信息：
+</p>
+
+<pre python>
+Traceback (most recent call last):
+  File "ex4.py", line 8, in &lt;module&gt;
+    average_passengers_per_car = car_pool_capacity / passenger
+NameError: name 'car_pool_capacity' is not defined
+</pre>
+
+<p>
+用你自己的话解释一下这个错误信息，解释时记得使用行号，而且要说明原因。
+</p>
+
+<p>
+更多的加分习题:
+</p>
+
+<p>
+我在程序里用了 4.0 作为 space_in_a_car 的值，这样做有必要吗？如果只用 4 会有什么问题?
+</p>
+<ol>
+<li>
+记住 4.0 是一个“浮点数”，自己研究一下这是什么意思。
+
+<li>
+在每一个变量赋值的上一行加上一行注解。
+
+<li>
+记住 = 的名字是等于(equal)，它的作用是为东西取名。
+
+<li>
+记住 _ 是下划线字符(underscore)。
+
+<li>
+将 python 作为计算器运行起来，就跟以前一样，不过这一次在计算过程中使用变量名来做计算，常见的变量名有 i, x, j 等等。
+
+</ol>
+
+        
+      </div>
+      <footer>
+          <p>&copy; Company 2015  <img src="http://youanan.qiniudn.com/youanan.com/youananemail.png"  alt="联系我" border="0"></p>
+      </footer>
+
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+    <script src="../../jquery/1.11.2/jquery.min.js"></script>
+    <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"> -->
+    <script type="text/javascript" src="http://cdn.bootcss.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../js/panel/python_panel.js"></script>
+    <script type="text/javascript" src="../../js/google-code-prettify/prettify.js"></script>
+  </body>
+</html>
+

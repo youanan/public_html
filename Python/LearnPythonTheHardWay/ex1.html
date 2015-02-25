@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <title>习题1:第一个程序 </title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="this is youanan's wiki, design by vimwiki">
+    <meta name="author" content="youanan">
+    <link rel="shortcut icon" href="../../favicon.ico">
+
+    <!-- Bootstrap core CSS -->
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.2/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <!--local Bootstrap core CSS -->
+    <link href="../../bootstrap/3.3.2/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+
+
+    <!--local google-code-prettify.CSS -->
+    <link href="../../css/prettify.css" type="text/css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../../css/starter-template.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="http://youanan.com">youanan</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="../../index.html">Home</a></li>
+            <li><a href="../../diary/diary.html">Diary</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="starter-template">
+        
+<h1 id="toc_1">习题 1: 第一个程序</h1>
+<p>
+你应该在练习 0 中花了不少的时间，学会了如何安装文本编辑器、运行文本编辑器、以及如何运行命令行终端，而且你已经花时间熟悉了这些工具。请不要跳过前一个练习的内容直接进行下面的内容，这也是本书唯一的一次这样的警示。
+</p>
+
+<p>
+将下面的内容写到一个文件中，取名为 ex1.py。这个命名方式很重要，Python 文件最好以 .py 结尾。
+</p>
+<pre python>
+print "Hello World!"
+print "Hello Again"
+print "I like typing this."
+print "This is fun."
+print 'Yay! Printing.'
+print "I'd much rather you 'not'."
+print 'I "said" do not touch this.'
+</pre>
+<p>
+如果你使用的是 Mac OSX 下的 TextWrangler，那你的文本编辑器大致是这个样子:
+<img src="http://youanan.qiniudn.com/python/lpthw/osx_textwrangler.png" />
+</p>
+
+<p>
+如果你在 Windows 下使用 Notepad++，那你看到的应该是这个:
+<img src="http://youanan.qiniudn.com/python/lpthw/win_notepadpp_ex1.png" />
+</p>
+
+<p>
+别担心编辑器长得是不是一样，关键是以下几点：
+</p>
+
+<ol>
+<li>
+注意我没有输入左边的行号（1-7）。这些是额外打印到书里边的，以方便对代码具体的某一行进行讨论。例如“参见第 5 行……”你无需将这些也写进 python 脚本中去。
+
+<li>
+注意我截图中开始的 print 语句，它和代码范例中是完全一样的，而且是精确的完全相同，不仅仅是表面相似而已。要让这段脚本正常工作，代码中的每个字符都必须完全匹配。当然，显示的颜色可能是不同的，颜色并不重要，只有字符才是重要的。
+
+</ol>
+<p>
+然后你需要在命令行终端通过输入以下内容来运行这段代码：
+</p>
+<pre python>
+python ex1.py
+</pre>
+<p>
+如果你写对了的话，你应该看到和下面一样的内容。如果不一样，那就是你弄错了什么东西。不是计算机出错了，计算机没错。
+</p>
+
+<h2 id="toc_1.1">你应该看到的结果</h2>
+
+<p>
+在 Mac OSX 的 Terminal 下面你应该看到以下内容:
+</p>
+
+<p>
+<img src="http://youanan.qiniudn.com/python/lpthw/osx_terminal_ex1.png" />
+</p>
+
+<p>
+在 Windows 的 PowerShell 下你应该看到这些:
+</p>
+
+<p>
+<img src="http://youanan.qiniudn.com/python/lpthw/win_powershell_ex1.png" />
+</p>
+
+<p>
+你也许会看到 python ex1.py 前面显示了不同的用户名，计算机名，以及其他一些信息，这不是问题，重要的是你输入了命令，而且看到了相同的输出。
+</p>
+
+<p>
+如果你看到类似如下的错误信息：
+</p>
+<pre python>
+
+$ python ex/ex1.py 
+  File "ex/ex1.py", line 3
+    print "I like typing this.
+                             ^
+SyntaxError: EOL while scanning string literal
+</pre>
+<p>
+这些内容你应该学会看懂的，这是很重要的一点，因为你以后还会犯类似的错误。就是我现在也会犯这样的错误。让我们一行一行来看。
+</p>
+
+<ol>
+<li>
+首先我们在命令行终端输入命令来运行 ex1.py 脚本。
+
+<li>
+Python 告诉我们 ex1.py 文件的第 3 行有一个错误。
+
+<li>
+然后这一行的内容被打印了出来。
+
+<li>
+然后 Python 打印出一个 ^ (井号，caret) 符号，用来指示出错的位置。 注意到少了一个 " (双引号，double-quote) 符号了吗？
+
+<li>
+最后，它打印出了一个“语法错误(SyntaxError)”告诉你究竟是什么样的错误。通常这些错误信息都非常难懂，不过你可以把错误信息的内容复制到搜索引擎里，然后你就能看到别人也遇到过这样的错误， 而且你也许能找到如何解决这个问题。
+
+</ol>
+<p>
+~~~~如果你来自另外一个国家，而且你看到关于 ASCII 编码的错误，那就在你的 python 脚本的最上面加入这一行：
+</p>
+<pre python>
+# -- coding: utf-8 --
+</pre>
+<p>
+这样你就在脚本中使用了 unicode UTF-8 编码，这些错误就不会出现了。
+</p>
+
+<h2 id="toc_1.2">加分习题</h2>
+<p>
+你还会有 加分习题 需要完成。加分习题里边的内容是供你尝试的。如果你觉得做不出来，你可以暂时跳过，过段时间再回来做。
+</p>
+
+<p>
+在这个练习中，试试这些东西：
+</p>
+
+<p>
+让你的脚本再多打印一行。
+让你的脚本只打印一行。
+在一行的起始位置放一个 ‘#’ (octothorpe) 符号。它的作用是什么？自己研究一下。
+从现在开始，除非特别情况，我将不再解释每个习题的工作原理了。
+</p>
+
+<p>
+~~~井号有很多的英文名字，例如：’octothorpe(八角帽)’，’pound(英镑符)’, ‘hash(电话的#键)’, ‘mesh(网)’ 等。
+</p>
+
+        
+      </div>
+      <footer>
+          <p>&copy; Company 2015  <img src="http://youanan.qiniudn.com/youanan.com/youananemail.png"  alt="联系我" border="0"></p>
+      </footer>
+
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+    <script src="../../jquery/1.11.2/jquery.min.js"></script>
+    <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"> -->
+    <script type="text/javascript" src="http://cdn.bootcss.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../js/panel/python_panel.js"></script>
+    <script type="text/javascript" src="../../js/google-code-prettify/prettify.js"></script>
+  </body>
+</html>
+

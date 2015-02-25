@@ -6,6 +6,10 @@
 
 $(document).ready(function(){
 
+ $("pre").addClass("prettyprint");
+ $("pre").addClass("linenums");
+ prettyPrint();
+
  $("p:contains(~~~~)").each(function(){
  $(this).replaceWith('<div class="panel panel-danger">'+'<div class="panel-heading">Warning</div>'+'<div class="panel-body">'+$(this).html()+'</div>'+'</div>');
  });
