@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
   <head>
-    <title>Python</title>
+    <title>python 真值表</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="this is youanan's wiki, design by vimwiki">
     <meta name="author" content="youanan">
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="../favicon.ico">
 
     <!-- Bootstrap core CSS -->
     <link href="http://cdn.bootcss.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
     <!--local Bootstrap core CSS -->
-    <link href="bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
 
 
     <!-- Custom styles for this template -->
-    <link href="css/starter-template.css" rel="stylesheet">
+    <link href="../css/starter-template.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
@@ -40,8 +40,8 @@
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="index.html">Home</a></li>
-            <li><a href="diary/diary.html">Diary</a></li>
+            <li class="active"><a href="../index.html">Home</a></li>
+            <li><a href="../diary/diary.html">Diary</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -51,14 +51,292 @@
 
       <div class="starter-template">
         
-<ul>
-<li>
-<a href="Python/LearnPythonTheHardWay.html">笨方法学python</a>
+<h1 id="toc_1">Python 真值表</h1>
+<hr />
+<table>
+<tr>
+<th>
+NOT
+</th>
+<th>
+True?
+</th>
+</tr>
+<tr>
+<td>
+Not False
+</td>
+<td>
+True
+</td>
+</tr>
+<tr>
+<td>
+Not True
+</td>
+<td>
+False
+</td>
+</tr>
+</table>
 
-<li>
-<a href="Python/true.html">python真值表</a>
+<table>
+<tr>
+<th>
+OR
+</th>
+<th>
+True?
+</th>
+</tr>
+<tr>
+<td>
+True or False
+</td>
+<td>
+True
+</td>
+</tr>
+<tr>
+<td>
+True or True
+</td>
+<td>
+True
+</td>
+</tr>
+<tr>
+<td>
+False or True
+</td>
+<td>
+True
+</td>
+</tr>
+<tr>
+<td>
+False or False
+</td>
+<td>
+False
+</td>
+</tr>
+</table>
 
-</ul>
+<table>
+<tr>
+<th>
+AND
+</th>
+<th>
+True?
+</th>
+</tr>
+<tr>
+<td>
+True and False
+</td>
+<td>
+False
+</td>
+</tr>
+<tr>
+<td>
+True and True
+</td>
+<td>
+True
+</td>
+</tr>
+<tr>
+<td>
+False and True
+</td>
+<td>
+False
+</td>
+</tr>
+<tr>
+<td>
+False and False
+</td>
+<td>
+False
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>
+NOT OR
+</th>
+<th>
+True?
+</th>
+</tr>
+<tr>
+<td>
+not(True or False)
+</td>
+<td>
+False
+</td>
+</tr>
+<tr>
+<td>
+not(True or True)
+</td>
+<td>
+False
+</td>
+</tr>
+<tr>
+<td>
+not(False or True)
+</td>
+<td>
+False
+</td>
+</tr>
+<tr>
+<td>
+not(False or False)
+</td>
+<td>
+True
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>
+NOT AND
+</th>
+<th>
+True?
+</th>
+</tr>
+<tr>
+<td>
+not(True and False)
+</td>
+<td>
+True
+</td>
+</tr>
+<tr>
+<td>
+not(True and True)
+</td>
+<td>
+False
+</td>
+</tr>
+<tr>
+<td>
+not(False and True)
+</td>
+<td>
+True
+</td>
+</tr>
+<tr>
+<td>
+not(False and False)
+</td>
+<td>
+True
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>
+!=
+</th>
+<th>
+True?
+</th>
+</tr>
+<tr>
+<td>
+1 != 0
+</td>
+<td>
+True
+</td>
+</tr>
+<tr>
+<td>
+1 != 1
+</td>
+<td>
+False
+</td>
+</tr>
+<tr>
+<td>
+0 != 1
+</td>
+<td>
+True
+</td>
+</tr>
+<tr>
+<td>
+0 != 0
+</td>
+<td>
+False
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>
+==
+</th>
+<th>
+True?
+</th>
+</tr>
+<tr>
+<td>
+1 == 0
+</td>
+<td>
+False
+</td>
+</tr>
+<tr>
+<td>
+1 == 1
+</td>
+<td>
+True
+</td>
+</tr>
+<tr>
+<td>
+0 == 1
+</td>
+<td>
+False
+</td>
+</tr>
+<tr>
+<td>
+0 == 0
+</td>
+<td>
+True
+</td>
+</tr>
+</table>
 
         
       </div>
@@ -73,11 +351,11 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
-    <script src="jquery/1.11.2/jquery.min.js"></script>
+    <script src="../jquery/1.11.2/jquery.min.js"></script>
     <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"> -->
     <script type="text/javascript" src="http://cdn.bootcss.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="bootstrap/3.3.2/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/Custom_styles/mystyle.js"></script>
+    <script type="text/javascript" src="../bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/Custom_styles/mystyle.js"></script>
   </body>
 </html>
 
