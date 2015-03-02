@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
   <head>
-    <title>习题 3: 注释和井号</title>
+    <title>习题 13: 参数、解包、变量</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -54,54 +54,127 @@
 
       <div class="starter-template">
         
-<h1 id="toc_1">习题 2: 注释和井号</h1>
+<h1 id="toc_1">习题 13: 参数、解包、变量</h1>
 
 <p>
-程序里的注释是很重要的。它们可以用自然语言告诉你某段代码的功能是什么。在你想要临时移除一段代码时，你还可以用注解的方式将这段代码临时禁用。接下来的练习将让你学会注释:
+在这节练习中，我们将降到另外一种将变量传递给脚本的方法(所谓脚本，就是你写的 .py 程序)。你已经知道，如果要运行 ex13.py，只要在命令行运行 python ex13.py 就可以了。这句命令中的 ex13.py 部分就是所谓的“参数(argument)”，我们现在要做的就是写一个可以接受参数的脚本。
 </p>
 
-<pre python>
-# A comment, this is so you can read your program later.
-# Anything after the # is ignored by python.
+<p>
+将下面的程序写下来，后面你将看到详细解释。
+</p>
 
-print "I could have code like this." # and the comment after is ignored
+<pre>
+from sys import argv
 
-# You can also use a comment to "disable" or comment out a piece of code:
-# print "This won't run."
+script, first, second, third = argv
 
-print "This will run."
+print "The script is called:", script
+print "Your first variable is:", first
+print "Your second variable is:", second
+print "Your third variable is:", third
 </pre>
 
 <p>
-从现在开始，我将用这样的方式来写代码。我一直在强调“完全相同”，不过你也不必按照字面意思理解。你的程序在屏幕上的显示可能会有些不同，不过重要的是你在文本编辑器中输入的文本的正确性。事实上，我可以用任何编辑器写出这段程序，而且内容是完全一样的。
+在第 1 行我们有一个“import”语句. 这是你将 python 的功能引入你的脚本的方法. Python 不会一下子将它所有的功能给你，而是让你需要什么就调用什么。这样可以让你的程序保持精简，而后面的程序员看到你的代码的时候，这些“import”可以作为提示，让他们明白你的代码用到了哪些功能。
 </p>
 
-<h2 id="toc_1.1">你应该看到的结果</h2>
-<pre python>
-$ python ex2.py 
-I could have code like this.
-This will run.
-$
+<p>
+argv 是所谓的“参数变量(argument variable)”，是一个非常标准的编程术语。在其他的编程语言里你也可以看到它。这个变量包含了你传递给 Python 的参数。通过后面的练习你将对它有更多的了解。
+</p>
+
+<p>
+第 3 行将 argv “解包(unpack)”，与其将所有参数放到同一个变量下面，我们将每个参数赋予一个变量名： script, first, second, 以及 third。这也许看上去有些奇怪, 不过”解包”可能是最好的描述方式了。它的含义很简单：“把 argv 中的东西解包，将所有的参数依次赋予左边的变量名”。
+</p>
+
+<p>
+接下来就是正常的打印了。
+</p>
+
+<h2 id="toc_1.1">等一下！“功能”还有另外一个名字</h2>
+
+<p>
+前面我们使用 import 让你的程序实现更多的功能，但实际上没人吧 import 称为“功能”。我希望你可以在没接触到正式术语的时候就弄懂它的功能。在继续下去之前, 你需要知道它们的真正名称：模组(modules)。
+</p>
+
+<p>
+从现在开始我们将把这些我们导入(import)进来的功能称作模组。你将看到类似这样的说法：“你需要把 sys 模组 import 进来。”也有人将它们称作“库(libraries)”，不过我们还是叫它们模组吧。
+</p>
+
+<h2 id="toc_1.2">你应该看到的结果</h2>
+
+<p>
+用下面的方法运行你的程序（注意你必须传递*三*个参数）：
+</p>
+
+<pre>
+python ex13.py first 2nd 3rd
 </pre>
 
 <p>
-再次说明，我不会再贴各种屏幕截图了。你应该明白上面的内容是输出内容的字面翻译，而 \( python ... 和最后的 \) 之间才是你应该关心的内容。
+如果你每次使用不同的参数运行，你将看到下面的结果：
 </p>
 
-<h2 id="toc_1.2">加分习题</h2>
+<pre>
+$ python ex13.py first 2nd 3rd
+The script is called: ex13.py
+Your first variable is: first
+Your second variable is: 2nd
+Your third variable is: 3rd
+
+$ python ex13.py cheese apples bread
+The script is called: ex13.py
+Your first variable is: cheese
+Your second variable is: apples
+Your third variable is: bread
+
+$ python ex13.py Zed A. Shaw
+The script is called: ex13.py
+Your first variable is: Zed
+Your second variable is: A.
+Your third variable is: Shaw
+</pre>
+
+<p>
+你其实可以将“first”、“2nd”、“3rd”替换成任意三样东西。你可以将它们换成任意你想要的东西.
+</p>
+
+<pre>
+python ex13.py stuff I like
+python ex13.py anything 6 7
+</pre>
+
+<p>
+如果你没有运行对，你将看到如下错误：
+</p>
+
+<pre>
+python ex13.py first 2nd
+Traceback (most recent call last):
+  File "ex/ex13.py", line 3, in &lt;module&gt;
+    script, first, second, third = argv
+ValueError: need more than 3 values to unpack
+</pre>
+
+<p>
+当你运行脚本时提供的参数的个数不对的时候，你就会看到上述错误信息 (这次我只用了
+first 2nd 两个参数)。“need more than 3 values to unpack”这个错误信息告诉你参数数量不足。
+</p>
+
+<h2 id="toc_1.3">加分习题</h2>
 
 <ol>
 <li>
-弄清楚”#”符号的作用。而且记住它的名字。(中文为井号，英文为 octothorpe 或者 pound character)。
+给你的脚本三个以下的参数。看看会得到什么错误信息。试着解释一下。
 
 <li>
-打开你的 ex2.py 文件，从后往前逐行检查。从最后一行开始，倒着逐个单词单词检查回去。
+再写两个脚本，其中一个接受更少的参数，另一个接受更多的参数，在参数解包时给它们取一些有意义的变量名。
 
 <li>
-有没有发现什么错误呢？有的话就改正过来.
+将 raw_input 和 argv 一起使用，让你的脚本从用户手上得到更多的输入。
 
 <li>
-朗读你写的习题，把每个字符都读出来。有没有发现更多的错误呢？有的话也一样改正过来。
+记住“模组(modules)”为你提供额外功能。多读几遍把这个词记住，因为我们后面还会用到它。
 
 </ol>
 

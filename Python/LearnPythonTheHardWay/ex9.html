@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
   <head>
-    <title>习题 3: 注释和井号</title>
+    <title>习题 9: 打印，打印，打印</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -54,54 +54,52 @@
 
       <div class="starter-template">
         
-<h1 id="toc_1">习题 2: 注释和井号</h1>
+<h1 id="toc_1">习题 9: 打印，打印，打印</h1>
 
-<p>
-程序里的注释是很重要的。它们可以用自然语言告诉你某段代码的功能是什么。在你想要临时移除一段代码时，你还可以用注解的方式将这段代码临时禁用。接下来的练习将让你学会注释:
-</p>
+<pre>
+ # Here's some new strange stuff, remember type it exactly.
 
-<pre python>
-# A comment, this is so you can read your program later.
-# Anything after the # is ignored by python.
+days = "Mon Tue Wed Thu Fri Sat Sun"
+months = "Jan\nFeb\nMar\nApr\nMay\nJun\nJul\nAug"
 
-print "I could have code like this." # and the comment after is ignored
+print "Here are the days: ", days
+print "Here are the months: ", months
 
-# You can also use a comment to "disable" or comment out a piece of code:
-# print "This won't run."
-
-print "This will run."
+print """
+There's something going on here.
+With the three double-quotes.
+We'll be able to type as much as we like.
+Even 4 lines if we want, or 5, or 6.
+"""
 </pre>
-
-<p>
-从现在开始，我将用这样的方式来写代码。我一直在强调“完全相同”，不过你也不必按照字面意思理解。你的程序在屏幕上的显示可能会有些不同，不过重要的是你在文本编辑器中输入的文本的正确性。事实上，我可以用任何编辑器写出这段程序，而且内容是完全一样的。
-</p>
 
 <h2 id="toc_1.1">你应该看到的结果</h2>
-<pre python>
-$ python ex2.py 
-I could have code like this.
-This will run.
+
+<pre>
+$ python ex9.py
+Here are the days:  Mon Tue Wed Thu Fri Sat Sun
+Here are the months:  Jan
+Feb
+Mar
+Apr
+May
+Jun
+Jul
+Aug
+
+There's something going on here.
+With the three double-quotes.
+We'll be able to type as much as we like.
+Even 4 lines if we want, or 5, or 6.
+
 $
 </pre>
-
-<p>
-再次说明，我不会再贴各种屏幕截图了。你应该明白上面的内容是输出内容的字面翻译，而 \( python ... 和最后的 \) 之间才是你应该关心的内容。
-</p>
 
 <h2 id="toc_1.2">加分习题</h2>
 
 <ol>
 <li>
-弄清楚”#”符号的作用。而且记住它的名字。(中文为井号，英文为 octothorpe 或者 pound character)。
-
-<li>
-打开你的 ex2.py 文件，从后往前逐行检查。从最后一行开始，倒着逐个单词单词检查回去。
-
-<li>
-有没有发现什么错误呢？有的话就改正过来.
-
-<li>
-朗读你写的习题，把每个字符都读出来。有没有发现更多的错误呢？有的话也一样改正过来。
+自己检查结果，记录你犯过的错误，并且在下个练习中尽量不犯同样的错误。
 
 </ol>
 

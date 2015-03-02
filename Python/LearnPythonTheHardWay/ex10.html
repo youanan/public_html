@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
   <head>
-    <title>习题 3: 注释和井号</title>
+    <title>习题 10: 那是什么？</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -54,54 +54,87 @@
 
       <div class="starter-template">
         
-<h1 id="toc_1">习题 2: 注释和井号</h1>
+<h1 id="toc_1">习题 10: 那是什么？</h1>
 
 <p>
-程序里的注释是很重要的。它们可以用自然语言告诉你某段代码的功能是什么。在你想要临时移除一段代码时，你还可以用注解的方式将这段代码临时禁用。接下来的练习将让你学会注释:
+在习题 9 中我你接触了一些新东西。我让你看到两种让字符串扩展到多行的方法。第一种方法是在月份之间用 \n (back-slash n )隔开。这两个字符的作用是在该位置上放入一个“新行(new line)”字符。
 </p>
 
-<pre python>
-# A comment, this is so you can read your program later.
-# Anything after the # is ignored by python.
+<p>
+使用反斜杠 \ (back-slash) 可以将难打印出来的字符放到字符串。针对不同的符号有很多这样的所谓“转义序列(escape sequences)”，但有一个特殊的转义序列，就是 双反斜杠(double back-slash) \\ 。这两个字符组合会打印出一个反斜杠来。接下来我们做几个练习，然后你就知道这些转义序列的意义了。
+</p>
 
-print "I could have code like this." # and the comment after is ignored
+<p>
+另外一种重要的转义序列是用来将单引号 ' 和双引号 " 转义。想象你有一个用双引号引用起来的字符串，你想要在字符串的内容里再添加一组双引号进去，比如你想说"I "understand" joe."，Python 就会认为 "understand" 前后的两个引号是字符串的边界，从而把字符串弄错。你需要一种方法告诉 python 字符串里边的双引号不是真正的双引号。
+</p>
 
-# You can also use a comment to "disable" or comment out a piece of code:
-# print "This won't run."
+<p>
+要解决这个问题，你需要将双引号和单引号转义，让 Python 将引号也包含到字符串里边去。这里有一个例子：
+</p>
 
-print "This will run."
+<pre>
+"I am 6'2\" tall."  # 将字符串中的双引号转义
+'I am 6\'2" tall.'  # 将字符串种的单引号转义
 </pre>
 
 <p>
-从现在开始，我将用这样的方式来写代码。我一直在强调“完全相同”，不过你也不必按照字面意思理解。你的程序在屏幕上的显示可能会有些不同，不过重要的是你在文本编辑器中输入的文本的正确性。事实上，我可以用任何编辑器写出这段程序，而且内容是完全一样的。
+第二种方法是使用“三引号(triple-quotes)”，也就是 """，你可以在一组三引号之间放入任意多行的文字。接下来你将看到用法。
 </p>
+
+<pre>
+tabby_cat = "\tI'm tabbed in."
+persian_cat = "I'm split\non a line."
+backslash_cat = "I'm \\ a \\ cat."
+
+fat_cat = """
+I'll do a list:
+\t* Cat food
+\t* Fishies
+\t* Catnip\n\t* Grass
+"""
+
+print tabby_cat
+print persian_cat
+print backslash_cat
+print fat_cat
+</pre>
 
 <h2 id="toc_1.1">你应该看到的结果</h2>
-<pre python>
-$ python ex2.py 
-I could have code like this.
-This will run.
-$
-</pre>
 
 <p>
-再次说明，我不会再贴各种屏幕截图了。你应该明白上面的内容是输出内容的字面翻译，而 \( python ... 和最后的 \) 之间才是你应该关心的内容。
+注意你打印出来的制表符，这节练习中的文字间隔对于答案的正确性是很重要的。
 </p>
+
+<pre>
+$ python ex10.py
+	I'm tabbed in.
+I'm split
+on a line.
+I'm \ a \ cat.
+
+I'll do a list:
+	* Cat food
+	* Fishies
+	* Catnip
+	* Grass
+
+$
+</pre>
 
 <h2 id="toc_1.2">加分习题</h2>
 
 <ol>
 <li>
-弄清楚”#”符号的作用。而且记住它的名字。(中文为井号，英文为 octothorpe 或者 pound character)。
+上网搜索一下还有哪些可用的转义字符。
 
 <li>
-打开你的 ex2.py 文件，从后往前逐行检查。从最后一行开始，倒着逐个单词单词检查回去。
+使用 ''' (三个单引号)取代三个双引号，看看效果是不是一样的？
 
 <li>
-有没有发现什么错误呢？有的话就改正过来.
+将转义序列和格式化字符串放到一起，创建一种更复杂的格式。
 
 <li>
-朗读你写的习题，把每个字符都读出来。有没有发现更多的错误呢？有的话也一样改正过来。
+记得 %r 格式化字符串吗？使用 %r 搭配单引号和双引号转义字符打印一些字符串出来。 将 %r 和 %s 比较一下。 注意到了吗？%r 打印出来的是你写在脚本里的内容，而 %s 打印的是你应该看到的内容。
 
 </ol>
 

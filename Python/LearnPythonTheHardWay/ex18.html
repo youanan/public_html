@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
   <head>
-    <title>习题 3: 注释和井号</title>
+    <title>习题 18: 命名、变量、代码、函数</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -54,56 +54,182 @@
 
       <div class="starter-template">
         
-<h1 id="toc_1">习题 2: 注释和井号</h1>
+
+<h1 id="toc_1">习题 18: 命名、变量、代码、函数</h1>
 
 <p>
-程序里的注释是很重要的。它们可以用自然语言告诉你某段代码的功能是什么。在你想要临时移除一段代码时，你还可以用注解的方式将这段代码临时禁用。接下来的练习将让你学会注释:
+标题包含的内容够多的吧？接下来我要教你“函数(function)”了！咚咚锵！说到函数，不一样的人会对它有不一样的理解和使用方法，不过我只会教你现在能用到的最简单的使用方式。
 </p>
 
-<pre python>
-# A comment, this is so you can read your program later.
-# Anything after the # is ignored by python.
+<p>
+函数可以做三样事情：
+</p>
 
-print "I could have code like this." # and the comment after is ignored
+<ol>
+<li>
+它们给代码片段命名，就跟“变量”给字符串和数字命名一样。
 
-# You can also use a comment to "disable" or comment out a piece of code:
-# print "This won't run."
+<li>
+它们可以接受参数，就跟你的脚本接受 argv 一样。
 
-print "This will run."
+<li>
+通过使用 #1 和 #2，它们可以让你创建“微型脚本”或者“小命令”。
+
+</ol>
+
+<p>
+你可以使用 def 新建函数。我将让你创建四个不同的函数，它们工作起来和你的脚本一样。然后我会演示给你各个函数之间的关系。
+</p>
+
+
+<pre>
+# this one is like your scripts with argv
+def print_two(*args):
+    arg1, arg2 = args
+    print "arg1: %r, arg2: %r" % (arg1, arg2)
+
+# ok, that *args is actually pointless, we can just do this
+def print_two_again(arg1, arg2):
+    print "arg1: %r, arg2: %r" % (arg1, arg2)
+
+# this just takes one argument
+def print_one(arg1):
+    print "arg1: %r" % arg1
+
+# this one takes no arguments
+def print_none():
+    print "I got nothin'."
+
+
+print_two("Zed","Shaw")
+print_two_again("Zed","Shaw")
+print_one("First!")
+print_none()
 </pre>
 
 <p>
-从现在开始，我将用这样的方式来写代码。我一直在强调“完全相同”，不过你也不必按照字面意思理解。你的程序在屏幕上的显示可能会有些不同，不过重要的是你在文本编辑器中输入的文本的正确性。事实上，我可以用任何编辑器写出这段程序，而且内容是完全一样的。
+让我们把你一个函数 print_two 肢解一下，这个函数和你写脚本的方式差不多，因此你看上去应该会觉着比较眼熟：
+</p>
+
+<ol>
+<li>
+首先我们告诉 Python 创建一个函数，我们使用到的命令是 def ，也就是“定义(define)”的意思。
+
+<li>
+紧接着 def 的是函数的名称。本例中它的名称是 “print_two”，但名字可以随便取，就叫 “peanuts” 也没关系。但最好函数的名称能够体现出函数的功能来。
+
+<li>
+然后我们告诉函数我们需要 *args (asterisk args)，这和脚本的 argv 非常相似，参数必须放在圆括号 () 中才能正常工作。
+
+<li>
+接着我们用冒号 : 结束本行，然后开始下一行缩进。
+
+<li>
+冒号以下，使用 4 个空格缩进的行都是属于 print_two 这个函数的内容。 其中第一行的作用是将参数解包，这和脚本参数解包的原理差不多。
+
+<li>
+为了演示它的工作原理，我们把解包后的每个参数都打印出来，这和我们在之前脚本练习中所作的类似。
+
+</ol>
+
+<p>
+函数 print_two 的问题是：它并不是创建函数最简单的方法。在 Python 函数中我们可以跳过整个参数解包的过程，直接使用 () 里边的名称作为变量名。这就是 print_two_again 实现的功能。
+</p>
+
+<p>
+接下来的例子是 print_one ，它向你演示了函数如何接受单个参数。
+</p>
+
+<p>
+最后一个例子是 print_none ，它向你演示了函数可以不接收任何参数。
+</p>
+
+<p>
+~~~~如果你不太能看懂上面的内容也别气馁。后面我们还有更多的练习向你展示如何创建和使用函数。现在你只要把函数理解成“迷你脚本”就可以了。
 </p>
 
 <h2 id="toc_1.1">你应该看到的结果</h2>
-<pre python>
-$ python ex2.py 
-I could have code like this.
-This will run.
+
+<p>
+运行上面的脚本会看到如下结果:
+</p>
+
+<pre>
+$ python ex18.py
+arg1: 'Zed', arg2: 'Shaw'
+arg1: 'Zed', arg2: 'Shaw'
+arg1: 'First!'
+I got nothin'.
 $
 </pre>
 
 <p>
-再次说明，我不会再贴各种屏幕截图了。你应该明白上面的内容是输出内容的字面翻译，而 \( python ... 和最后的 \) 之间才是你应该关心的内容。
+你应该已经看出函数是怎样工作的了。注意到函数的用法和你以前见过的 exists、 open，以及别的“命令”有点类似了吧？其实我只是为了让你容易理解才叫它们“命令”， 它们的本质其实就是函数。也就是说，你也可以在自己的脚本中创建你自己的“命令”。
 </p>
 
 <h2 id="toc_1.2">加分习题</h2>
 
+<p>
+为自己写一个函数注意事项以供后续参考。你可以写在一个索引卡片上随时阅读，直到你记住所有的要点为止。注意事项如下：
+</p>
+
 <ol>
 <li>
-弄清楚”#”符号的作用。而且记住它的名字。(中文为井号，英文为 octothorpe 或者 pound character)。
+函数定义是以 def 开始的吗？
 
 <li>
-打开你的 ex2.py 文件，从后往前逐行检查。从最后一行开始，倒着逐个单词单词检查回去。
+函数名称是以字符和下划线 _ 组成的吗？
 
 <li>
-有没有发现什么错误呢？有的话就改正过来.
+函数名称是不是紧跟着括号 ( ？
 
 <li>
-朗读你写的习题，把每个字符都读出来。有没有发现更多的错误呢？有的话也一样改正过来。
+括号里是否包含参数？多个参数是否以逗号隔开？
+
+<li>
+参数名称是否有重复？（不能使用重复的参数名）
+
+<li>
+紧跟着参数的是不是括号和冒号 ): ？
+
+<li>
+紧跟着函数定义的代码是否使用了 4 个空格的缩进 (indent)？
+
+<li>
+函数结束的位置是否取消了缩进 (“dedent”)？
 
 </ol>
+
+<p>
+当你运行（或者说“使用 use”或者“调用 call”）一个函数时，记得检查下面的要点：
+</p>
+
+<ol>
+<li>
+调运函数时是否使用了函数的名称？
+
+<li>
+函数名称是否紧跟着 ( ？
+
+<li>
+括号后有无参数？多个参数是否以逗号隔开？
+
+<li>
+函数是否以 ) 结尾？
+
+</ol>
+
+<p>
+按照这两份检查表里的内容检查你的练习，直到你不需要检查表为止。
+</p>
+
+<p>
+最后，将下面这句话阅读几遍：
+</p>
+
+<p>
+“‘运行函数(run)’、‘调用函数(call)’、和 ‘使用函数(use)’是同一个意思”
+</p>
 
         
       </div>

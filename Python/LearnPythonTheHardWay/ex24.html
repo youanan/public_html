@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
   <head>
-    <title>习题 3: 注释和井号</title>
+    <title>习题 24: 更多练习</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -54,54 +54,87 @@
 
       <div class="starter-template">
         
-<h1 id="toc_1">习题 2: 注释和井号</h1>
+<h1 id="toc_1">习题 24: 更多练习</h1>
 
 <p>
-程序里的注释是很重要的。它们可以用自然语言告诉你某段代码的功能是什么。在你想要临时移除一段代码时，你还可以用注解的方式将这段代码临时禁用。接下来的练习将让你学会注释:
+你离这本书第一部分的结尾已经不远了，你应该已经具备了足够的 Python 基础知识，可以继续学习一些编程的原理了，但你应该做更多的练习。这个练习的内容比较长，它的目的是锻炼你的毅力，下一个习题也差不多是这样的，好好完成它们，做到完全正确，记得仔细检查。
 </p>
 
-<pre python>
-# A comment, this is so you can read your program later.
-# Anything after the # is ignored by python.
+<pre>
+print "Let's practice everything."
+print 'You\'d need to know \'bout escapes with \\ that do \n newlines and \t tabs.'
 
-print "I could have code like this." # and the comment after is ignored
+poem = """
+\tThe lovely world
+with logic so firmly planted
+cannot discern \n the needs of love
+nor comprehend passion from intuition
+and requires an explanation
+\n\t\twhere there is none.
+"""
 
-# You can also use a comment to "disable" or comment out a piece of code:
-# print "This won't run."
+print "--------------"
+print poem
+print "--------------"
 
-print "This will run."
+
+five = 10 - 2 + 3 - 6
+print "This should be five: %s" % five
+
+def secret_formula(started):
+    jelly_beans = started * 500
+    jars = jelly_beans / 1000
+    crates = jars / 100
+    return jelly_beans, jars, crates
+
+
+start_point = 10000
+beans, jars, crates = secret_formula(start_point)
+
+print "With a starting point of: %d" % start_point
+print "We'd have %d beans, %d jars, and %d crates." % (beans, jars, crates)
+
+start_point = start_point / 10
+
+print "We can also do that this way:"
+print "We'd have %d beans, %d jars, and %d crates." % secret_formula(start_point)
 </pre>
-
-<p>
-从现在开始，我将用这样的方式来写代码。我一直在强调“完全相同”，不过你也不必按照字面意思理解。你的程序在屏幕上的显示可能会有些不同，不过重要的是你在文本编辑器中输入的文本的正确性。事实上，我可以用任何编辑器写出这段程序，而且内容是完全一样的。
-</p>
 
 <h2 id="toc_1.1">你应该看到的结果</h2>
-<pre python>
-$ python ex2.py 
-I could have code like this.
-This will run.
+
+<pre>
+$ python ex24.py
+Let's practice everything.
+You'd need to know 'bout escapes with \ that do 
+ newlines and 	 tabs.
+--------------
+
+	The lovely world
+with logic so firmly planted
+cannot discern 
+ the needs of love
+nor comprehend passion from intuition
+and requires an explanation
+
+		where there is none.
+
+--------------
+This should be five: 5
+With a starting point of: 10000
+We'd have 5000000 beans, 5000 jars, and 50 crates.
+We can also do that this way:
+We'd have 500000 beans, 500 jars, and 5 crates.
 $
 </pre>
-
-<p>
-再次说明，我不会再贴各种屏幕截图了。你应该明白上面的内容是输出内容的字面翻译，而 \( python ... 和最后的 \) 之间才是你应该关心的内容。
-</p>
 
 <h2 id="toc_1.2">加分习题</h2>
 
 <ol>
 <li>
-弄清楚”#”符号的作用。而且记住它的名字。(中文为井号，英文为 octothorpe 或者 pound character)。
+记得仔细检查结果，从后往前倒着检查，把代码朗读出来，在不清楚的位置加上注释。
 
 <li>
-打开你的 ex2.py 文件，从后往前逐行检查。从最后一行开始，倒着逐个单词单词检查回去。
-
-<li>
-有没有发现什么错误呢？有的话就改正过来.
-
-<li>
-朗读你写的习题，把每个字符都读出来。有没有发现更多的错误呢？有的话也一样改正过来。
+故意把代码改错，运行并检查会发生什么样的错误，并且确认你有能力改正这些错误。
 
 </ol>
 

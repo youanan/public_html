@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
   <head>
-    <title>习题 3: 注释和井号</title>
+    <title>习题 17: 更多文件操作</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -54,54 +54,98 @@
 
       <div class="starter-template">
         
-<h1 id="toc_1">习题 2: 注释和井号</h1>
+<h1 id="toc_1">习题 17: 更多文件操作</h1>
 
 <p>
-程序里的注释是很重要的。它们可以用自然语言告诉你某段代码的功能是什么。在你想要临时移除一段代码时，你还可以用注解的方式将这段代码临时禁用。接下来的练习将让你学会注释:
+现在让我们再学习几种文件操作。我们将编写一个 Python 脚本，将一个文件中的内容拷贝到另外一个文件中。这个脚本很短，不过它会让你对于文件操作有更多的了解。
 </p>
 
-<pre python>
-# A comment, this is so you can read your program later.
-# Anything after the # is ignored by python.
 
-print "I could have code like this." # and the comment after is ignored
+<pre>
+from sys import argv
+from os.path import exists
 
-# You can also use a comment to "disable" or comment out a piece of code:
-# print "This won't run."
+script, from_file, to_file = argv
 
-print "This will run."
+print "Copying from %s to %s" % (from_file, to_file)
+
+# we could do these two on one line too, how?
+input = open(from_file)
+indata = input.read()
+
+print "The input file is %d bytes long" % len(indata)
+
+print "Does the output file exist? %r" % exists(to_file)
+print "Ready, hit RETURN to continue, CTRL-C to abort."
+raw_input()
+
+output = open(to_file, 'w')
+output.write(indata)
+
+print "Alright, all done."
+
+output.close()
+input.close()
 </pre>
 
 <p>
-从现在开始，我将用这样的方式来写代码。我一直在强调“完全相同”，不过你也不必按照字面意思理解。你的程序在屏幕上的显示可能会有些不同，不过重要的是你在文本编辑器中输入的文本的正确性。事实上，我可以用任何编辑器写出这段程序，而且内容是完全一样的。
+你应该很快注意到了我们 import 了又一个很好用的命令 exists。这个命令将文件名字符串作为参数，如果文件存在的话，它将返回 True，否则将返回 False。在本书的下半部分，我们将使用这个函数做很多的事情，不过现在你应该学会怎样通过 import 调用它。
+</p>
+
+<p>
+通过使用 import ，你可以在自己代码中直接使用其他更厉害的（通常是这样，不过也不 尽然）程序员写的大量免费代码，这样你就不需要重写一遍了。
 </p>
 
 <h2 id="toc_1.1">你应该看到的结果</h2>
-<pre python>
-$ python ex2.py 
-I could have code like this.
-This will run.
+
+<p>
+和你前面写的脚本一样，运行该脚本需要两个参数，一个是待拷贝的文件，一个是要拷贝至的文件。如果我们使用以前的 test.txt 我们将看到如下的结果:
+</p>
+
+<pre>
+$ python ex17.py test.txt copied.txt
+Copying from test.txt to copied.txt
+The input file is 81 bytes long
+Does the output file exist? False
+Ready, hit RETURN to continue, CTRL-C to abort.
+
+Alright, all done.
+
+$ cat copied.txt
+To all the people out there.
+I say I don't like my hair.
+I need to shave it off.
 $
 </pre>
 
 <p>
-再次说明，我不会再贴各种屏幕截图了。你应该明白上面的内容是输出内容的字面翻译，而 \( python ... 和最后的 \) 之间才是你应该关心的内容。
+该命令对于任何文件都应该是有效的。试试操作一些别的文件看看结果。不过小心别把你的重要文件给弄坏了。
+</p>
+
+<p>
+~~~~你看到我用 cat 这个命令了吧？它只能在 Linux 和 OSX 下面使用，使用 Windows 的就只好跟你说声抱歉了。
 </p>
 
 <h2 id="toc_1.2">加分习题</h2>
 
 <ol>
 <li>
-弄清楚”#”符号的作用。而且记住它的名字。(中文为井号，英文为 octothorpe 或者 pound character)。
+再多读读和 import 相关的材料，将 python 运行起来，试试这一条命令。试着看看自己能不能摸出点门道，当然了，即使弄不明白也没关系。
 
 <li>
-打开你的 ex2.py 文件，从后往前逐行检查。从最后一行开始，倒着逐个单词单词检查回去。
+这个脚本 实在是 有点烦人。没必要在拷贝之前问一遍把，没必要在屏幕上输出那么多东西。试着删掉脚本的一些功能，让它使用起来更加友好。
 
 <li>
-有没有发现什么错误呢？有的话就改正过来.
+看看你能把这个脚本改多短，我可以把它写成一行。
 
 <li>
-朗读你写的习题，把每个字符都读出来。有没有发现更多的错误呢？有的话也一样改正过来。
+我使用了一个叫 cat 的东西，这个古老的命令的用处是将两个文件“连接(con*cat*enate)”到一起，不过实际上它最大的用途是打印文件内容到屏幕上。你可以通过 man cat 命令了解到更多信息。
+
+<li>
+使用 Windows 的同学，你们可以给自己找一个 cat 的替代品。关于 man 的东西就别想太多了，Windows 下没这个命令。
+
+<li>
+找出为什么你需要在代码中写 output.close() 。
 
 </ol>
 
