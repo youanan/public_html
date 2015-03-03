@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <title>习题 35: 分支和函数</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="this is youanan's wiki, design by vimwiki">
+    <meta name="author" content="youanan">
+    <link rel="shortcut icon" href="../../favicon.ico">
+
+    <!-- Bootstrap core CSS -->
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.2/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <!--local Bootstrap core CSS -->
+    <link href="../../bootstrap/3.3.2/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+
+
+    <!--local google-code-prettify.CSS -->
+    <link href="../../css/prettify.css" type="text/css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../../css/starter-template.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="http://youanan.com">youanan</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="../../index.html">Home</a></li>
+            <li><a href="../../diary/diary.html">Diary</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="starter-template">
+        
+<h1 id="toc_1">习题 35: 分支和函数</h1>
+
+<p>
+你已经学会了 if 语句、函数、还有列表。现在你要练习扭转一下思维了。把下面的代码写下来，看你是否能弄懂它实现的是什么功能。
+</p>
+
+<pre>
+from sys import exit
+
+def gold_room():
+    print "This room is full of gold.  How much do you take?"
+
+    next = raw_input("&gt; ")
+    if "0" in next or "1" in next:
+        how_much = int(next)
+    else:
+        dead("Man, learn to type a number.")
+
+    if how_much &lt; 50:
+        print "Nice, you're not greedy, you win!"
+        exit(0)
+    else:
+        dead("You greedy bastard!")
+
+
+def bear_room():
+    print "There is a bear here."
+    print "The bear has a bunch of honey."
+    print "The fat bear is in front of another door."
+    print "How are you going to move the bear?"
+    bear_moved = False
+
+    while True:
+        next = raw_input("&gt; ")
+
+        if next == "take honey":
+            dead("The bear looks at you then slaps your face off.")
+        elif next == "taunt bear" and not bear_moved:
+            print "The bear has moved from the door. You can go through it now."
+            bear_moved = True
+        elif next == "taunt bear" and bear_moved:
+            dead("The bear gets pissed off and chews your leg off.")
+        elif next == "open door" and bear_moved:
+            gold_room()
+        else:
+            print "I got no idea what that means."
+
+
+def cthulhu_room():
+    print "Here you see the great evil Cthulhu."
+    print "He, it, whatever stares at you and you go insane."
+    print "Do you flee for your life or eat your head?"
+
+    next = raw_input("&gt; ")
+
+    if "flee" in next:
+        start()
+    elif "head" in next:
+        dead("Well that was tasty!")
+    else:
+        cthulhu_room()
+
+
+def dead(why):
+    print why, "Good job!"
+    exit(0)
+
+def start():
+    print "You are in a dark room."
+    print "There is a door to your right and left."
+    print "Which one do you take?"
+
+    next = raw_input("&gt; ")
+
+    if next == "left":
+        bear_room()
+    elif next == "right":
+        cthulhu_room()
+    else:
+        dead("You stumble around the room until you starve.")
+
+
+start()
+</pre>
+
+<h2 id="toc_1.1">你应该看到的结果</h2>
+
+<p>
+下面是我玩游戏的过程：
+</p>
+
+<pre>
+$ python ex35.py
+You are in a dark room.
+There is a door to your right and left.
+Which one do you take?
+&gt; left
+There is a bear here.
+The bear has a bunch of honey.
+The fat bear is in front of another door.
+How are you going to move the bear?
+&gt; taunt bear
+The bear has moved from the door. You can go through it now.
+&gt; open door
+This room is full of gold.  How much do you take?
+&gt; asf
+Man, learn to type a number. Good job!
+$
+</pre>
+
+<h2 id="toc_1.2">加分习题</h2>
+
+<ol>
+<li>
+把这个游戏的地图画出来，把自己的路线也画出来。
+
+<li>
+改正你所有的错误，包括拼写错误。
+
+<li>
+为你不懂的函数写注解。记得文档注解该怎么写吗？
+
+<li>
+为游戏添加更多元素。通过怎样的方式可以简化并且扩展游戏的功能呢？
+
+<li>
+这个 gold_room 游戏使用了奇怪的方式让你键入一个数字。这种方式会导致什么样的 bug？ 你可以用比检查 0、1 更好的方式判断输入是否是数字吗？int() 这个函数可以给你一些头绪。
+
+</ol>
+
+        
+      </div>
+        <nav>
+            <ul class="pagination">
+                <li><a href="intro_zh.html">译者前言</a></li>
+                <li><a href="intro.html">前言</a></li>
+                <li><a href="ex1.html">1</a></li>
+                <li><a href="ex2.html">2</a></li>
+                <li><a href="ex3.html">3</a></li>
+                <li><a href="ex4.html">4</a></li>
+                <li><a href="ex5.html">5</a></li>
+                <li><a href="ex6.html">6</a></li>
+                <li><a href="ex7.html">7</a></li>
+                <li><a href="ex8.html">8</a></li>
+                <li><a href="ex9.html">9</a></li>
+                <li><a href="ex10.html">10</a></li>
+                <li><a href="ex11.html">11</a></li>
+                <li><a href="ex12.html">12</a></li>
+                <li><a href="ex13.html">13</a></li>
+                <li><a href="ex14.html#">14</a></li>
+                <li><a href="ex15.html#">15</a></li>
+                <li><a href="ex16.html#">16</a></li>
+                <li><a href="ex17.html#">17</a></li>
+                <li><a href="ex18.html#">18</a></li>
+                <li><a href="ex19.html#">19</a></li>
+                <li><a href="ex20.html#">20</a></li>
+                <li><a href="ex21.html#">21</a></li>
+                <li><a href="ex22.html#">22</a></li>
+                <li><a href="ex23.html#">23</a></li>
+                <li><a href="ex24.html#">24</a></li>
+                <li><a href="ex25.html#">25</a></li>
+                <li><a href="ex26.html#">26</a></li>
+                <li><a href="ex27.html#">27</a></li>
+                <li><a href="ex28.html#">28</a></li>
+                <li><a href="ex29.html#">29</a></li>
+                <li><a href="ex30.html#">30</a></li>
+                <li><a href="ex31.html#">31</a></li>
+                <li><a href="ex32.html#">32</a></li>
+                <li><a href="ex33.html#">33</a></li>
+                <li><a href="ex34.html#">34</a></li>
+                <li><a href="ex35.html#">35</a></li>
+                <li><a href="ex36.html#">36</a></li>
+                <li><a href="ex37.html#">37</a></li>
+                <li><a href="ex38.html#">38</a></li>
+                <li><a href="ex39.html#">39</a></li>
+                <li><a href="ex40.html#">40</a></li>
+                <li><a href="ex41.html#">41</a></li>
+                <li><a href="ex42.html#">42</a></li>
+                <li><a href="ex43.html#">43</a></li>
+                <li><a href="ex44.html#">44</a></li>
+                <li><a href="ex45.html#">45</a></li>
+                <li><a href="ex46.html#">46</a></li>
+                <li><a href="ex47.html#">47</a></li>
+                <li><a href="ex48.html#">48</a></li>
+                <li><a href="ex49.html">49</a></li>
+                <li><a href="ex50.html">50</a></li>
+                <li><a href="ex51.html">51</a></li>
+                <li><a href="ex52.html">52</a></li>
+                <li><a href="next.html">下一步</a></li>
+                <li><a href="advice.html">老程序员的建议</a></li>
+                </li>
+            </ul>
+        </nav>
+      <footer>
+          <p>&copy; Company 2015  <img src="http://youanan.qiniudn.com/youanan.com/youananemail.png"  alt="联系我" border="0"></p>
+      </footer>
+
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+    <script src="../../jquery/1.11.2/jquery.min.js"></script>
+    <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"> -->
+    <script type="text/javascript" src="http://cdn.bootcss.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../js/panel/python_panel.js"></script>
+    <script type="text/javascript" src="../../js/google-code-prettify/prettify.js"></script>
+  </body>
+</html>
+

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <title>习题 33: While 循环</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="this is youanan's wiki, design by vimwiki">
+    <meta name="author" content="youanan">
+    <link rel="shortcut icon" href="../../favicon.ico">
+
+    <!-- Bootstrap core CSS -->
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.2/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <!--local Bootstrap core CSS -->
+    <link href="../../bootstrap/3.3.2/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+
+
+    <!--local google-code-prettify.CSS -->
+    <link href="../../css/prettify.css" type="text/css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../../css/starter-template.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="http://youanan.com">youanan</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="../../index.html">Home</a></li>
+            <li><a href="../../diary/diary.html">Diary</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="starter-template">
+        
+<h1 id="toc_1">习题 33: While 循环</h1>
+
+<p>
+接下来是一个更在你意料之外的概念： while-loop`<code>（while 循环）。</code>`while-loop 会一直执行它下面的代码片段，直到它对应的布尔表达式为 False 时才会停下来。
+</p>
+
+<p>
+等等，你还能跟得上这些术语吧？如果你的某一行是以 : （冒号, colon）结尾，那就意味着接下来的内容是一个新的代码片段，新的代码片段是需要被缩进的。只有将代码用这样的方式格式化，Python 才能知道你的目的。如果你不太明白这一点，就回去看看“if 语句”和“函数”的章节，直到你明白为止。
+</p>
+
+<p>
+接下来的练习将训练你的大脑去阅读这些结构化的代码。这和我们将布尔表达式烧录到你的大脑中的过程有点类似。
+</p>
+
+<p>
+回到 while 循环，它所作的和 if 语句类似，也是去检查一个布尔表达式的真假，不一样的是它下面的代码片段不是只被执行一次，而是执行完后再调回到 while 所在的位置，如此重复进行，直到 while 表达式为 False 为止。
+</p>
+
+<p>
+While 循环有一个问题，那就是有时它会永不结束。如果你的目的是循环到宇宙毁灭为止，那这样也挺好的，不过其他的情况下你的循环总需要有一个结束点。
+</p>
+
+<p>
+为了避免这样的问题，你需要遵循下面的规定：
+</p>
+
+<ol>
+<li>
+尽量少用 while-loop，大部分时候 for-loop 是更好的选择。
+
+<li>
+重复检查你的 while 语句，确定你测试的布尔表达式最终会变成 False 。
+
+<li>
+如果不确定，就在 while-loop 的结尾打印出你要测试的值。看看它的变化。
+
+</ol>
+
+<p>
+在这节练习中，你将通过上面的三样事情学会 while-loop ：
+</p>
+
+<pre>
+i = 0
+numbers = []
+
+while i &lt; 6:
+    print "At the top i is %d" % i
+    numbers.append(i)
+
+    i = i + 1
+    print "Numbers now: ", numbers
+    print "At the bottom i is %d" % i
+
+
+print "The numbers: "
+
+for num in numbers:
+    print num
+</pre>
+    
+<h2 id="toc_1.1">你应该看到的结果</h2>
+
+<pre>
+$ python ex33.py
+At the top i is 0
+Numbers now:  [0]
+At the bottom i is 1
+At the top i is 1
+Numbers now:  [0, 1]
+At the bottom i is 2
+At the top i is 2
+Numbers now:  [0, 1, 2]
+At the bottom i is 3
+At the top i is 3
+Numbers now:  [0, 1, 2, 3]
+At the bottom i is 4
+At the top i is 4
+Numbers now:  [0, 1, 2, 3, 4]
+At the bottom i is 5
+At the top i is 5
+Numbers now:  [0, 1, 2, 3, 4, 5]
+At the bottom i is 6
+The numbers: 
+0
+1
+2
+3
+4
+5
+</pre>
+
+<h2 id="toc_1.2">加分习题</h2>
+
+<ol>
+<li>
+将这个 while 循环改成一个函数，将测试条件(i &lt; 6)中的 6 换成一个变量。
+
+<li>
+使用这个函数重写你的脚本，并用不同的数字进行测试。
+
+<li>
+为函数添加另外一个参数，这个参数用来定义第 8 行的加值 + 1 ，这样你就可以让它任意加值了。
+
+<li>
+再使用该函数重写一遍这个脚本。看看效果如何。
+
+<li>
+接下来使用 for-loop 和 range 把这个脚本再写一遍。你还需要中间的加值操作吗？如果你不去掉它，会有什么样的结果？
+
+<li>
+很有可能你会碰到程序跑着停不下来了，这时你只要按着 CTRL 再敲 c (CTRL-c)，这样程序就会中断下来了。
+
+</ol>
+
+        
+      </div>
+        <nav>
+            <ul class="pagination">
+                <li><a href="intro_zh.html">译者前言</a></li>
+                <li><a href="intro.html">前言</a></li>
+                <li><a href="ex1.html">1</a></li>
+                <li><a href="ex2.html">2</a></li>
+                <li><a href="ex3.html">3</a></li>
+                <li><a href="ex4.html">4</a></li>
+                <li><a href="ex5.html">5</a></li>
+                <li><a href="ex6.html">6</a></li>
+                <li><a href="ex7.html">7</a></li>
+                <li><a href="ex8.html">8</a></li>
+                <li><a href="ex9.html">9</a></li>
+                <li><a href="ex10.html">10</a></li>
+                <li><a href="ex11.html">11</a></li>
+                <li><a href="ex12.html">12</a></li>
+                <li><a href="ex13.html">13</a></li>
+                <li><a href="ex14.html#">14</a></li>
+                <li><a href="ex15.html#">15</a></li>
+                <li><a href="ex16.html#">16</a></li>
+                <li><a href="ex17.html#">17</a></li>
+                <li><a href="ex18.html#">18</a></li>
+                <li><a href="ex19.html#">19</a></li>
+                <li><a href="ex20.html#">20</a></li>
+                <li><a href="ex21.html#">21</a></li>
+                <li><a href="ex22.html#">22</a></li>
+                <li><a href="ex23.html#">23</a></li>
+                <li><a href="ex24.html#">24</a></li>
+                <li><a href="ex25.html#">25</a></li>
+                <li><a href="ex26.html#">26</a></li>
+                <li><a href="ex27.html#">27</a></li>
+                <li><a href="ex28.html#">28</a></li>
+                <li><a href="ex29.html#">29</a></li>
+                <li><a href="ex30.html#">30</a></li>
+                <li><a href="ex31.html#">31</a></li>
+                <li><a href="ex32.html#">32</a></li>
+                <li><a href="ex33.html#">33</a></li>
+                <li><a href="ex34.html#">34</a></li>
+                <li><a href="ex35.html#">35</a></li>
+                <li><a href="ex36.html#">36</a></li>
+                <li><a href="ex37.html#">37</a></li>
+                <li><a href="ex38.html#">38</a></li>
+                <li><a href="ex39.html#">39</a></li>
+                <li><a href="ex40.html#">40</a></li>
+                <li><a href="ex41.html#">41</a></li>
+                <li><a href="ex42.html#">42</a></li>
+                <li><a href="ex43.html#">43</a></li>
+                <li><a href="ex44.html#">44</a></li>
+                <li><a href="ex45.html#">45</a></li>
+                <li><a href="ex46.html#">46</a></li>
+                <li><a href="ex47.html#">47</a></li>
+                <li><a href="ex48.html#">48</a></li>
+                <li><a href="ex49.html">49</a></li>
+                <li><a href="ex50.html">50</a></li>
+                <li><a href="ex51.html">51</a></li>
+                <li><a href="ex52.html">52</a></li>
+                <li><a href="next.html">下一步</a></li>
+                <li><a href="advice.html">老程序员的建议</a></li>
+                </li>
+            </ul>
+        </nav>
+      <footer>
+          <p>&copy; Company 2015  <img src="http://youanan.qiniudn.com/youanan.com/youananemail.png"  alt="联系我" border="0"></p>
+      </footer>
+
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+    <script src="../../jquery/1.11.2/jquery.min.js"></script>
+    <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"> -->
+    <script type="text/javascript" src="http://cdn.bootcss.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../js/panel/python_panel.js"></script>
+    <script type="text/javascript" src="../../js/google-code-prettify/prettify.js"></script>
+  </body>
+</html>
+

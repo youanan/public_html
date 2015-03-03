@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <title>习题 28: 布尔表达式练习</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="this is youanan's wiki, design by vimwiki">
+    <meta name="author" content="youanan">
+    <link rel="shortcut icon" href="../../favicon.ico">
+
+    <!-- Bootstrap core CSS -->
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.2/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <!--local Bootstrap core CSS -->
+    <link href="../../bootstrap/3.3.2/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+
+
+    <!--local google-code-prettify.CSS -->
+    <link href="../../css/prettify.css" type="text/css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../../css/starter-template.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="http://youanan.com">youanan</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="../../index.html">Home</a></li>
+            <li><a href="../../diary/diary.html">Diary</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="starter-template">
+        
+<h1 id="toc_1">习题 28: 布尔表达式练习</h1>
+
+<p>
+上一节你学到的逻辑组合的正式名称是“布尔逻辑表达式(boolean logic expression)”。在编程中，布尔逻辑可以说是无处不在。它们是计算机运算的基础和重要组成部分，掌握它们就跟学音乐掌握音阶一样重要。
+</p>
+
+<p>
+在这节练习中，你将在 python 里使用到上节学到的逻辑表达式。先为下面的每一个逻辑问题写出你认为的答案，每一题的答案要么为 True 要么为 False。写完以后，你需要将python 运行起来，把这些逻辑语句输入进去，确认你写的答案是否正确。
+</p>
+
+<ol>
+<li>
+True and True
+
+<li>
+False and True
+
+<li>
+1 == 1 and 2 == 1
+
+<li>
+"test" == "test"
+
+<li>
+1 == 1 or 2 != 1
+
+<li>
+True and 1 == 1
+
+<li>
+False and 0 != 0
+
+<li>
+True or 1 == 1
+
+<li>
+"test" == "testing"
+
+<li>
+1 != 0 and 2 == 1
+
+<li>
+"test" != "testing"
+
+<li>
+"test" == 1
+
+<li>
+not (True and False)
+
+<li>
+not (1 == 1 and 0 != 1)
+
+<li>
+not (10 == 1 or 1000 == 1000)
+
+<li>
+not (1 != 10 or 3 == 4)
+
+<li>
+not ("testing" == "testing" and "Zed" == "Cool Guy")
+
+<li>
+1 == 1 and not ("testing" == 1 or 1 == 0)
+
+<li>
+"chunky" == "bacon" and not (3 == 4 or 3 == 3)
+
+<li>
+3 == 3 and not ("testing" == "testing" or "Python" == "Fun")
+
+</ol>
+
+<p>
+在本节结尾的地方我会给你一个理清复杂逻辑的技巧。
+</p>
+
+<p>
+所有的布尔逻辑表达式都可以用下面的简单流程得到结果：
+</p>
+
+<ol>
+<li>
+找到相等判断的部分 (== or !=)，将其改写为其最终值 (True 或 False)。
+
+<li>
+找到括号里的 and/or，先算出它们的值。
+
+<li>
+找到每一个 not，算出他们反过来的值。
+
+<li>
+找到剩下的 and/or，解出它们的值。
+
+<li>
+等你都做完后，剩下的结果应该就是 True 或者 False 了。
+
+</ol>
+
+<p>
+下面我们以 #20 逻辑表达式演示一下：
+</p>
+
+<pre>
+3 != 4 and not ("testing" != "test" or "Python" == "Python")
+</pre>
+
+<p>
+接下来你将看到这个复杂表达式是如何逐级解为一个单独结果的：
+</p>
+
+<p>
+1.解出每一个等值判断:
+</p>
+<blockquote>
+a. 3 != 4 为 True: True and not ("testing" != "test" or "Python" == "Python")
+</blockquote>
+<blockquote>
+b. "testing" != "test" 为 True: True and not (True or "Python" == "Python")
+</blockquote>
+<blockquote>
+c. "Python" == "Python": True and not (True or True)
+</blockquote>
+    
+<p>
+2. 找到括号中的每一个 and/or :
+</p>
+<blockquote>
+a. (True or True) 为 True: True and not (True)
+</blockquote>
+    
+<p>
+3. 找到每一个 not 并将其逆转:
+</p>
+<blockquote>
+a. not (True) 为 False: True and False
+</blockquote>
+    
+<p>
+4. 找到剩下的 and/or，解出它们的值:
+</p>
+<blockquote>
+a. True and False 为 False
+</blockquote>
+    
+<p>
+这样我们就解出了它最终的值为 False.
+</p>
+
+<p>
+~~~~复杂的逻辑表达式一开始看上去可能会让你觉得很难。而且你也许已经碰壁过了，不过别灰心，这些“逻辑体操”式的训练只是让你逐渐习惯起来，这样后面你可以轻易应对编程里边更酷的一些东西。只要你坚持下去，不放过自己做错的地方就行了。如果你暂时不太能理解也没关系，弄懂的时候总会到来的。
+</p>
+
+<h2 id="toc_1.1">你应该看到的结果</h2>
+
+<p>
+以下内容是在你自己猜测结果以后，通过和 python 对话得到的结果：
+</p>
+
+<pre>
+$ python
+Python 2.5.1 (r251:54863, Feb  6 2009, 19:02:12)
+[GCC 4.0.1 (Apple Inc. build 5465)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+&gt;&gt;&gt; True and True
+True
+&gt;&gt;&gt; 1 == 1 and 2 == 2
+True
+</pre>
+
+<h2 id="toc_1.2">加分习题</h2>
+
+<ol>
+<li>
+Python 里还有很多和 != 、 == 类似的操作符. 试着尽可能多地列出 Python 中的等价运算符。例如 &lt; 或者 &lt;= 就是。
+
+<li>
+写出每一个等价运算符的名称。例如 != 叫 “not equal（不等于）”。
+
+<li>
+在 python 中测试新的布尔操作。在敲回车前你需要喊出它的结果。不要思考，凭自己的第一感就可以了。把表达式和结果用笔写下来再敲回车，最后看自己做对多少，做错多少。
+
+<li>
+把习题 3 那张纸丢掉，以后你不再需要查询它了。
+
+</ol>
+
+        
+      </div>
+        <nav>
+            <ul class="pagination">
+                <li><a href="intro_zh.html">译者前言</a></li>
+                <li><a href="intro.html">前言</a></li>
+                <li><a href="ex1.html">1</a></li>
+                <li><a href="ex2.html">2</a></li>
+                <li><a href="ex3.html">3</a></li>
+                <li><a href="ex4.html">4</a></li>
+                <li><a href="ex5.html">5</a></li>
+                <li><a href="ex6.html">6</a></li>
+                <li><a href="ex7.html">7</a></li>
+                <li><a href="ex8.html">8</a></li>
+                <li><a href="ex9.html">9</a></li>
+                <li><a href="ex10.html">10</a></li>
+                <li><a href="ex11.html">11</a></li>
+                <li><a href="ex12.html">12</a></li>
+                <li><a href="ex13.html">13</a></li>
+                <li><a href="ex14.html#">14</a></li>
+                <li><a href="ex15.html#">15</a></li>
+                <li><a href="ex16.html#">16</a></li>
+                <li><a href="ex17.html#">17</a></li>
+                <li><a href="ex18.html#">18</a></li>
+                <li><a href="ex19.html#">19</a></li>
+                <li><a href="ex20.html#">20</a></li>
+                <li><a href="ex21.html#">21</a></li>
+                <li><a href="ex22.html#">22</a></li>
+                <li><a href="ex23.html#">23</a></li>
+                <li><a href="ex24.html#">24</a></li>
+                <li><a href="ex25.html#">25</a></li>
+                <li><a href="ex26.html#">26</a></li>
+                <li><a href="ex27.html#">27</a></li>
+                <li><a href="ex28.html#">28</a></li>
+                <li><a href="ex29.html#">29</a></li>
+                <li><a href="ex30.html#">30</a></li>
+                <li><a href="ex31.html#">31</a></li>
+                <li><a href="ex32.html#">32</a></li>
+                <li><a href="ex33.html#">33</a></li>
+                <li><a href="ex34.html#">34</a></li>
+                <li><a href="ex35.html#">35</a></li>
+                <li><a href="ex36.html#">36</a></li>
+                <li><a href="ex37.html#">37</a></li>
+                <li><a href="ex38.html#">38</a></li>
+                <li><a href="ex39.html#">39</a></li>
+                <li><a href="ex40.html#">40</a></li>
+                <li><a href="ex41.html#">41</a></li>
+                <li><a href="ex42.html#">42</a></li>
+                <li><a href="ex43.html#">43</a></li>
+                <li><a href="ex44.html#">44</a></li>
+                <li><a href="ex45.html#">45</a></li>
+                <li><a href="ex46.html#">46</a></li>
+                <li><a href="ex47.html#">47</a></li>
+                <li><a href="ex48.html#">48</a></li>
+                <li><a href="ex49.html">49</a></li>
+                <li><a href="ex50.html">50</a></li>
+                <li><a href="ex51.html">51</a></li>
+                <li><a href="ex52.html">52</a></li>
+                <li><a href="next.html">下一步</a></li>
+                <li><a href="advice.html">老程序员的建议</a></li>
+                </li>
+            </ul>
+        </nav>
+      <footer>
+          <p>&copy; Company 2015  <img src="http://youanan.qiniudn.com/youanan.com/youananemail.png"  alt="联系我" border="0"></p>
+      </footer>
+
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+    <script src="../../jquery/1.11.2/jquery.min.js"></script>
+    <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"> -->
+    <script type="text/javascript" src="http://cdn.bootcss.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../js/panel/python_panel.js"></script>
+    <script type="text/javascript" src="../../js/google-code-prettify/prettify.js"></script>
+  </body>
+</html>
+

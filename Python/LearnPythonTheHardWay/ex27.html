@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <title>习题 27: 记住逻辑关系</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="this is youanan's wiki, design by vimwiki">
+    <meta name="author" content="youanan">
+    <link rel="shortcut icon" href="../../favicon.ico">
+
+    <!-- Bootstrap core CSS -->
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.2/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <!--local Bootstrap core CSS -->
+    <link href="../../bootstrap/3.3.2/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+
+
+    <!--local google-code-prettify.CSS -->
+    <link href="../../css/prettify.css" type="text/css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../../css/starter-template.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="http://youanan.com">youanan</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="../../index.html">Home</a></li>
+            <li><a href="../../diary/diary.html">Diary</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="starter-template">
+        
+<h1 id="toc_1">习题 27: 记住逻辑关系</h1>
+
+<p>
+到此为止你已经学会了读写文件，命令行处理，以及很多 Python 数学运算功能。今天，你将要开始学习逻辑了。你要学习的不是研究院里的高深逻辑理论，只是程序员每天都用到的让程序跑起来的基础逻辑知识。
+</p>
+
+<p>
+学习逻辑之前你需要先记住一些东西。这个练习我要求你一个星期完成，不要擅自修改日程，就算你烦得不得了，也要坚持下去。这个练习会让你背下来一系列的逻辑表格，这会让你更容易地完成后面的习题。
+</p>
+
+<p>
+需要事先警告你的是：这件事情一开始一点乐趣都没有，你会一开始就觉得它很无聊乏味，但它的目的是教你程序员必须的一个重要技能——一些重要的概念是必须记住的，一旦你明白了这些概念，你会获得相当的成就感，但是一开始你会觉得它们很难掌握，就跟和乌贼摔跤一样，而等到某一天，你会刷的一下豁然开朗。你会从这些基础的记忆学习中得到丰厚的回报。
+</p>
+
+<p>
+这里告诉你一个记住某样东西，而不让自己抓狂的方法：在一整天里，每次记忆一小部分，把你最需要加强的部分标记起来。不要想着在两小时内连续不停地背诵，这不会有什么好的结果。不管你花多长时间，你的大脑也只会留住你在前 15 或者 30 分钟内看过的东西。
+</p>
+
+<p>
+取而代之，你需要做的是创建一些索引卡片，卡片有两列内容，正面写下逻辑关系，反面写下答案。你需要做到的结果是：拿出一张卡片来，看到正面的表达式，例如 “True or False”，你可以立即说出背面的结果是 “True”！坚持练习，直到你能做到这一点为止。
+</p>
+
+<p>
+一旦你能做到这一点了，接下来你需要每天晚上自己在笔记本上写一份真值表出来。不要只是抄写它们，试着默写真值表，如果发现哪里没记住的话，就飞快地撇一眼这里的答案。这样将训练你的大脑让它记住整个真值表。
+</p>
+
+<p>
+不要在这上面花超过一周的时间，因为你在后面的应用过程中还会继续学习它们。
+</p>
+
+<h2 id="toc_1.1">逻辑术语</h2>
+
+<p>
+在 python 中我们会用到下面的术语（字符或者词汇）来定义事物的真(True)或者假(False)。计算机的逻辑就是在程序的某个位置检查这些字符或者变量组合在一起表达的结果是真是假。
+</p>
+
+<ul>
+<li>
+and 与
+
+<li>
+or 或
+
+<li>
+not 非
+
+<li>
+!= (not equal) 不等于
+
+<li>
+== (equal) 等于
+
+<li>
+&gt;= (greater-than-equal) 大于等于
+
+<li>
+&lt;= (less-than-equal) 小于等于
+
+<li>
+True 真
+
+<li>
+False 假
+
+</ul>
+
+<p>
+其实你已经见过这些字符了，但这些词汇你可能还没见过。这些词汇(and, or, not)和你期望的效果其实是一样的，跟英语里的意思一模一样。
+</p>
+
+<h2 id="toc_1.2">真值表</h2>
+
+<table>
+<tr>
+<th>
+NOT
+</th>
+<th>
+True?
+</th>
+</tr>
+<tr>
+<td>
+Not False
+</td>
+<td>
+True
+</td>
+</tr>
+<tr>
+<td>
+Not True
+</td>
+<td>
+False
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>
+OR
+</th>
+<th>
+True?
+</th>
+</tr>
+<tr>
+<td>
+True or False
+</td>
+<td>
+True
+</td>
+</tr>
+<tr>
+<td>
+True or True
+</td>
+<td>
+True
+</td>
+</tr>
+<tr>
+<td>
+False or True
+</td>
+<td>
+True
+</td>
+</tr>
+<tr>
+<td>
+False or False
+</td>
+<td>
+False
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>
+AND
+</th>
+<th>
+True?
+</th>
+</tr>
+<tr>
+<td>
+True and False
+</td>
+<td>
+False
+</td>
+</tr>
+<tr>
+<td>
+True and True
+</td>
+<td>
+True
+</td>
+</tr>
+<tr>
+<td>
+False and True
+</td>
+<td>
+False
+</td>
+</tr>
+<tr>
+<td>
+False and False
+</td>
+<td>
+False
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>
+NOT OR
+</th>
+<th>
+True?
+</th>
+</tr>
+<tr>
+<td>
+not(True or False)
+</td>
+<td>
+False
+</td>
+</tr>
+<tr>
+<td>
+not(True or True)
+</td>
+<td>
+False
+</td>
+</tr>
+<tr>
+<td>
+not(False or True)
+</td>
+<td>
+False
+</td>
+</tr>
+<tr>
+<td>
+not(False or False)
+</td>
+<td>
+True
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>
+NOT AND
+</th>
+<th>
+True?
+</th>
+</tr>
+<tr>
+<td>
+not(True and False)
+</td>
+<td>
+True
+</td>
+</tr>
+<tr>
+<td>
+not(True and True)
+</td>
+<td>
+False
+</td>
+</tr>
+<tr>
+<td>
+not(False and True)
+</td>
+<td>
+True
+</td>
+</tr>
+<tr>
+<td>
+not(False and False)
+</td>
+<td>
+True
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>
+!=
+</th>
+<th>
+True?
+</th>
+</tr>
+<tr>
+<td>
+1 != 0
+</td>
+<td>
+True
+</td>
+</tr>
+<tr>
+<td>
+1 != 1
+</td>
+<td>
+False
+</td>
+</tr>
+<tr>
+<td>
+0 != 1
+</td>
+<td>
+True
+</td>
+</tr>
+<tr>
+<td>
+0 != 0
+</td>
+<td>
+False
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>
+==
+</th>
+<th>
+True?
+</th>
+</tr>
+<tr>
+<td>
+1 == 0
+</td>
+<td>
+False
+</td>
+</tr>
+<tr>
+<td>
+1 == 1
+</td>
+<td>
+True
+</td>
+</tr>
+<tr>
+<td>
+0 == 1
+</td>
+<td>
+False
+</td>
+</tr>
+<tr>
+<td>
+0 == 0
+</td>
+<td>
+True
+</td>
+</tr>
+</table>
+
+<p>
+我们将使用这些字符来创建你需要记住的真值表。
+</p>
+
+<p>
+现在使用这些表格创建你自己的卡片，再花一个星期慢慢记住它们。记住一点，这本书不会要求你成功或者失败，只要每天尽力去学，在尽力的基础上多花一点功夫就可以了。
+</p>
+
+        
+      </div>
+        <nav>
+            <ul class="pagination">
+                <li><a href="intro_zh.html">译者前言</a></li>
+                <li><a href="intro.html">前言</a></li>
+                <li><a href="ex1.html">1</a></li>
+                <li><a href="ex2.html">2</a></li>
+                <li><a href="ex3.html">3</a></li>
+                <li><a href="ex4.html">4</a></li>
+                <li><a href="ex5.html">5</a></li>
+                <li><a href="ex6.html">6</a></li>
+                <li><a href="ex7.html">7</a></li>
+                <li><a href="ex8.html">8</a></li>
+                <li><a href="ex9.html">9</a></li>
+                <li><a href="ex10.html">10</a></li>
+                <li><a href="ex11.html">11</a></li>
+                <li><a href="ex12.html">12</a></li>
+                <li><a href="ex13.html">13</a></li>
+                <li><a href="ex14.html#">14</a></li>
+                <li><a href="ex15.html#">15</a></li>
+                <li><a href="ex16.html#">16</a></li>
+                <li><a href="ex17.html#">17</a></li>
+                <li><a href="ex18.html#">18</a></li>
+                <li><a href="ex19.html#">19</a></li>
+                <li><a href="ex20.html#">20</a></li>
+                <li><a href="ex21.html#">21</a></li>
+                <li><a href="ex22.html#">22</a></li>
+                <li><a href="ex23.html#">23</a></li>
+                <li><a href="ex24.html#">24</a></li>
+                <li><a href="ex25.html#">25</a></li>
+                <li><a href="ex26.html#">26</a></li>
+                <li><a href="ex27.html#">27</a></li>
+                <li><a href="ex28.html#">28</a></li>
+                <li><a href="ex29.html#">29</a></li>
+                <li><a href="ex30.html#">30</a></li>
+                <li><a href="ex31.html#">31</a></li>
+                <li><a href="ex32.html#">32</a></li>
+                <li><a href="ex33.html#">33</a></li>
+                <li><a href="ex34.html#">34</a></li>
+                <li><a href="ex35.html#">35</a></li>
+                <li><a href="ex36.html#">36</a></li>
+                <li><a href="ex37.html#">37</a></li>
+                <li><a href="ex38.html#">38</a></li>
+                <li><a href="ex39.html#">39</a></li>
+                <li><a href="ex40.html#">40</a></li>
+                <li><a href="ex41.html#">41</a></li>
+                <li><a href="ex42.html#">42</a></li>
+                <li><a href="ex43.html#">43</a></li>
+                <li><a href="ex44.html#">44</a></li>
+                <li><a href="ex45.html#">45</a></li>
+                <li><a href="ex46.html#">46</a></li>
+                <li><a href="ex47.html#">47</a></li>
+                <li><a href="ex48.html#">48</a></li>
+                <li><a href="ex49.html">49</a></li>
+                <li><a href="ex50.html">50</a></li>
+                <li><a href="ex51.html">51</a></li>
+                <li><a href="ex52.html">52</a></li>
+                <li><a href="next.html">下一步</a></li>
+                <li><a href="advice.html">老程序员的建议</a></li>
+                </li>
+            </ul>
+        </nav>
+      <footer>
+          <p>&copy; Company 2015  <img src="http://youanan.qiniudn.com/youanan.com/youananemail.png"  alt="联系我" border="0"></p>
+      </footer>
+
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+    <script src="../../jquery/1.11.2/jquery.min.js"></script>
+    <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"> -->
+    <script type="text/javascript" src="http://cdn.bootcss.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../js/panel/python_panel.js"></script>
+    <script type="text/javascript" src="../../js/google-code-prettify/prettify.js"></script>
+  </body>
+</html>
+

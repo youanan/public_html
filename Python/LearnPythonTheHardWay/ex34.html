@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <title>习题 34: 访问列表的元素</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="this is youanan's wiki, design by vimwiki">
+    <meta name="author" content="youanan">
+    <link rel="shortcut icon" href="../../favicon.ico">
+
+    <!-- Bootstrap core CSS -->
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.2/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <!--local Bootstrap core CSS -->
+    <link href="../../bootstrap/3.3.2/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+
+
+    <!--local google-code-prettify.CSS -->
+    <link href="../../css/prettify.css" type="text/css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../../css/starter-template.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="http://youanan.com">youanan</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="../../index.html">Home</a></li>
+            <li><a href="../../diary/diary.html">Diary</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="starter-template">
+        
+<h1 id="toc_1">习题 34: 访问列表的元素</h1>
+
+<p>
+列表的用处很大，但只有你能访问里边的内容时它才能发挥出作用来。你已经学会了按顺序读出列表的内容，但如果你要得到第 5 个元素该怎么办呢？你需要知道如何访问列表中的元素。访问第一个元素的方法是这样的：
+</p>
+
+<pre>
+animals = ['bear', 'tiger', 'penguin', 'zebra']
+bear = animals[0]
+</pre>
+
+<p>
+你定义一个 animals 的列表，然后你用 0 来获取第一个元素?! 这是怎么回事啊？因为数学里边就是这样，所以 Python 的列表也是从 0 开始的。虽然看上去很奇怪，这样定义其实有它的好处，而且实际上设计成 0 或者 1 开头其实都可以，
+</p>
+
+<p>
+最好的解释方式是将你平时使用数字的方式和程序员使用数字的方式做对比。
+</p>
+
+<p>
+假设你在观看上面列表中的四种动物(['bear', 'tiger', 'penguin', 'zebra']) 的赛跑，而它们比赛的名词正好跟列表里的次序一样。这是一场很激动人心的比赛，因为这些动物没打算吃掉对方，而且比赛还真的举办起来了。结果你的朋友来晚了，他想知道谁赢了比赛，他会问你“嘿，谁是第 0 名”吗？不会的，他会问“嘿，谁是第 1 名？”
+</p>
+
+<p>
+这是因为动物的次序是很重要的。没有第一个就没有第二个，没有第二个也没有第三个。第零个是不存在的，因为零的意思是什么都没有。“什么都没有”怎么赢比赛嘛，完全不合逻辑。这样的数字我们称之为“序数(ordinal number)”，因为它们表示的是事物的顺序。
+</p>
+
+<p>
+而程序员不能用这种方式思考问题，因为他们可以从列表的任何一个位置取出一个元素来。对程序员来说，上述的列表更像是一叠卡片。如果他们想要 tiger，就抓它出来，如果想要zebra，也一样抓取出来。要随机地抓取列表里的内容，列表的每一个元素都应该有一个地址，或者一个 “index（索引）”，而最好的方式是使用以 0 开头的索引。相信我说的这一点吧，这种方式获取元素会更容易。这类的数字被称为“基数(cardinal number)”，它意味着你可以任意抓取元素，所以我们需要一个 0 号元素。
+</p>
+
+<p>
+那么，这些知识对于你的列表操作有什么帮助呢？很简单，每次你对自己说“我要第 3 只动物”时，你需要将“序数”转换成“基数”，只要将前者减 1 就可以了。第 3 只动物的索引是 2，也就是 penguin。由于你一辈子都在跟序数打交道，所以你需要用这种方式来获得基数，只要减 1 就都搞定了。
+</p>
+
+<p>
+记住: ordinal == 有序，以 1 开始；cardinal == 随机选取, 以 0 开始。
+</p>
+
+<dl>
+<dt>让我们练习一下。定义一个动物列表，然后跟着做后面的练习，你需要写出所指位置的动物名称。如果我用的是“1st, 2nd”等说法，那说明我用的是序数，所以你需要减去 1。如果我给你的是基数（0, 1, 2），你只要直接使用即可。 .. code-block</dt>
+<dd>python</dd>
+</dl>
+
+<p>
+animals = [‘bear’, ‘python’, ‘peacock’, ‘kangaroo’, ‘whale’, ‘platypus’]
+</p>
+
+<ol>
+<li>
+The animal at 1.
+
+<li>
+The 3rd animal.
+
+<li>
+The 1st animal.
+
+<li>
+The animal at 3.
+
+<li>
+The 5th animal.
+
+<li>
+The animal at 2.
+
+<li>
+The 6th animal.
+
+<li>
+The animal at 4.
+
+</ol>
+
+<p>
+对于上述每一条，以这样的格式写出一个完整的句子：“The 1st animal is at 0 and is a bear.” 然后倒过来念：“The animal at 0 is the 1st animal and is a bear.”
+</p>
+
+<p>
+使用 python 检查你的答案。
+</p>
+
+<h2 id="toc_1.1">加分习题</h2>
+
+<ol>
+<li>
+上网搜索一下关于序数(ordinal number)和基数(cardinal number)的知识并阅读一下。
+
+<li>
+以你对于这些不同的数字类型的了解，解释一下为什么 “January 1, 2010” 里是 2010 而不是 2009？（提示：你不能随机挑选年份。）
+
+<li>
+再写一些列表，用一样的方式作出索引，确认自己可以在两种数字之间互相翻译。
+
+<li>
+使用 python 检查自己的答案。
+
+</ol>
+
+<p>
+~~~~会有程序员告诉你让你去阅读一个叫“Dijkstra”的人写的关于数字的话题。我建议你还是不读为妙。除非你喜欢听一个在编程这一行刚兴起时就停止从事编程了的人对你大喊大叫。
+</p>
+
+        
+      </div>
+        <nav>
+            <ul class="pagination">
+                <li><a href="intro_zh.html">译者前言</a></li>
+                <li><a href="intro.html">前言</a></li>
+                <li><a href="ex1.html">1</a></li>
+                <li><a href="ex2.html">2</a></li>
+                <li><a href="ex3.html">3</a></li>
+                <li><a href="ex4.html">4</a></li>
+                <li><a href="ex5.html">5</a></li>
+                <li><a href="ex6.html">6</a></li>
+                <li><a href="ex7.html">7</a></li>
+                <li><a href="ex8.html">8</a></li>
+                <li><a href="ex9.html">9</a></li>
+                <li><a href="ex10.html">10</a></li>
+                <li><a href="ex11.html">11</a></li>
+                <li><a href="ex12.html">12</a></li>
+                <li><a href="ex13.html">13</a></li>
+                <li><a href="ex14.html#">14</a></li>
+                <li><a href="ex15.html#">15</a></li>
+                <li><a href="ex16.html#">16</a></li>
+                <li><a href="ex17.html#">17</a></li>
+                <li><a href="ex18.html#">18</a></li>
+                <li><a href="ex19.html#">19</a></li>
+                <li><a href="ex20.html#">20</a></li>
+                <li><a href="ex21.html#">21</a></li>
+                <li><a href="ex22.html#">22</a></li>
+                <li><a href="ex23.html#">23</a></li>
+                <li><a href="ex24.html#">24</a></li>
+                <li><a href="ex25.html#">25</a></li>
+                <li><a href="ex26.html#">26</a></li>
+                <li><a href="ex27.html#">27</a></li>
+                <li><a href="ex28.html#">28</a></li>
+                <li><a href="ex29.html#">29</a></li>
+                <li><a href="ex30.html#">30</a></li>
+                <li><a href="ex31.html#">31</a></li>
+                <li><a href="ex32.html#">32</a></li>
+                <li><a href="ex33.html#">33</a></li>
+                <li><a href="ex34.html#">34</a></li>
+                <li><a href="ex35.html#">35</a></li>
+                <li><a href="ex36.html#">36</a></li>
+                <li><a href="ex37.html#">37</a></li>
+                <li><a href="ex38.html#">38</a></li>
+                <li><a href="ex39.html#">39</a></li>
+                <li><a href="ex40.html#">40</a></li>
+                <li><a href="ex41.html#">41</a></li>
+                <li><a href="ex42.html#">42</a></li>
+                <li><a href="ex43.html#">43</a></li>
+                <li><a href="ex44.html#">44</a></li>
+                <li><a href="ex45.html#">45</a></li>
+                <li><a href="ex46.html#">46</a></li>
+                <li><a href="ex47.html#">47</a></li>
+                <li><a href="ex48.html#">48</a></li>
+                <li><a href="ex49.html">49</a></li>
+                <li><a href="ex50.html">50</a></li>
+                <li><a href="ex51.html">51</a></li>
+                <li><a href="ex52.html">52</a></li>
+                <li><a href="next.html">下一步</a></li>
+                <li><a href="advice.html">老程序员的建议</a></li>
+                </li>
+            </ul>
+        </nav>
+      <footer>
+          <p>&copy; Company 2015  <img src="http://youanan.qiniudn.com/youanan.com/youananemail.png"  alt="联系我" border="0"></p>
+      </footer>
+
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+    <script src="../../jquery/1.11.2/jquery.min.js"></script>
+    <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"> -->
+    <script type="text/javascript" src="http://cdn.bootcss.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../js/panel/python_panel.js"></script>
+    <script type="text/javascript" src="../../js/google-code-prettify/prettify.js"></script>
+  </body>
+</html>
+

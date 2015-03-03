@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <title>习题 32: 循环和列表</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="this is youanan's wiki, design by vimwiki">
+    <meta name="author" content="youanan">
+    <link rel="shortcut icon" href="../../favicon.ico">
+
+    <!-- Bootstrap core CSS -->
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.2/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <!--local Bootstrap core CSS -->
+    <link href="../../bootstrap/3.3.2/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+
+
+    <!--local google-code-prettify.CSS -->
+    <link href="../../css/prettify.css" type="text/css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../../css/starter-template.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="http://youanan.com">youanan</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="../../index.html">Home</a></li>
+            <li><a href="../../diary/diary.html">Diary</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="starter-template">
+        
+<h1 id="toc_1">习题 32: 循环和列表</h1>
+
+<p>
+现在你应该有能力写更有趣的程序出来了。如果你能一直跟得上，你应该已经看出将“if 语句”和“布尔表达式”结合起来可以让程序作出一些智能化的事情。
+</p>
+
+<p>
+然而，我们的程序还需要能很快地完成重复的事情。这节习题中我们将使用 for-loop （for 循环）来创建和打印出各种各样的列表。在做的过程中，你会逐渐明白它们是怎么回事。现在我不会告诉你，你需要自己找到答案。
+</p>
+
+<p>
+在你开始使用 for 循环之前，你需要在某个位置存放循环的结果。最好的方法是使用列表(list)，顾名思义，它就是一个按顺序存放东西的容器。列表并不复杂，你只是要学习一点新的语法。首先我们看看如何创建列表：
+</p>
+
+<pre>
+hairs = ['brown', 'blond', 'red']
+eyes = ['brown', 'blue', 'green']
+weights = [1, 2, 3, 4]
+</pre>
+
+<p>
+你要做的是以 [ （左方括号）开头“打开”列表，然后写下你要放入列表的东西，用逗号隔开，就跟函数的参数一样，最后你需要用 ] （右方括号）结束右方括号的定义。然后 Python 接收这个列表以及里边所有的内容，将其赋给一个变量。
+</p>
+
+<p>
+~~~~对于不会编程的人来说这是一个难点。习惯性思维告诉你的大脑大地是平的。记得上一个练习中的 if 语句嵌套吧，你可能觉得要理解它有些难度，因为生活中一般人不会去像这样的问题，但这样的问题在编程中几乎到处都是。你会看到一个函数调用另外一个包含 if 语句的函数，其中又有嵌套列表的列表。如果你看到这样的东西一时无法弄懂，就用纸笔记下来，手动分割下去，直到弄懂为止。
+</p>
+
+<p>
+现在我们将使用循环创建一些列表，然后将它们打印出来。
+</p>
+
+<pre>
+the_count = [1, 2, 3, 4, 5]
+fruits = ['apples', 'oranges', 'pears', 'apricots']
+change = [1, 'pennies', 2, 'dimes', 3, 'quarters']
+
+# this first kind of for-loop goes through a list
+for number in the_count:
+    print "This is count %d" % number
+
+# same as above
+for fruit in fruits:
+    print "A fruit of type: %s" % fruit
+
+# also we can go through mixed lists too
+# notice we have to use %r since we don't know what's in it
+for i in change:
+    print "I got %r" % i
+
+# we can also build lists, first start with an empty one
+elements = []
+
+# then use the range function to do 0 to 5 counts
+for i in range(0, 6):
+    print "Adding %d to the list." % i
+    # append is a function that lists understand
+    elements.append(i)
+
+# now we can print them out too
+for i in elements:
+    print "Element was: %d" % i
+</pre>
+    
+<h2 id="toc_1.1">你应该看到的结果</h2>
+
+<pre>
+$ python ex32.py
+This is count 1
+This is count 2
+This is count 3
+This is count 4
+This is count 5
+A fruit of type: apples
+A fruit of type: oranges
+A fruit of type: pears
+A fruit of type: apricots
+I got 1
+I got 'pennies'
+I got 2
+I got 'dimes'
+I got 3
+I got 'quarters'
+Adding 0 to the list.
+Adding 1 to the list.
+Adding 2 to the list.
+Adding 3 to the list.
+Adding 4 to the list.
+Adding 5 to the list.
+Element was: 0
+Element was: 1
+Element was: 2
+Element was: 3
+Element was: 4
+Element was: 5
+$
+</pre>
+
+<h2 id="toc_1.2">加分习题</h2>
+
+<ol>
+<li>
+注意一下 range 的用法。查一下 range 函数并理解它。
+
+<li>
+在第 22 行，你可以可以直接将 elements 赋值为 range(0,6)，而无需使用 for 循环？
+
+<li>
+在 Python 文档中找到关于列表的内容，仔细阅读以下，除了 append 以外列表还支持哪些操作？
+
+</ol>
+
+        
+      </div>
+        <nav>
+            <ul class="pagination">
+                <li><a href="intro_zh.html">译者前言</a></li>
+                <li><a href="intro.html">前言</a></li>
+                <li><a href="ex1.html">1</a></li>
+                <li><a href="ex2.html">2</a></li>
+                <li><a href="ex3.html">3</a></li>
+                <li><a href="ex4.html">4</a></li>
+                <li><a href="ex5.html">5</a></li>
+                <li><a href="ex6.html">6</a></li>
+                <li><a href="ex7.html">7</a></li>
+                <li><a href="ex8.html">8</a></li>
+                <li><a href="ex9.html">9</a></li>
+                <li><a href="ex10.html">10</a></li>
+                <li><a href="ex11.html">11</a></li>
+                <li><a href="ex12.html">12</a></li>
+                <li><a href="ex13.html">13</a></li>
+                <li><a href="ex14.html#">14</a></li>
+                <li><a href="ex15.html#">15</a></li>
+                <li><a href="ex16.html#">16</a></li>
+                <li><a href="ex17.html#">17</a></li>
+                <li><a href="ex18.html#">18</a></li>
+                <li><a href="ex19.html#">19</a></li>
+                <li><a href="ex20.html#">20</a></li>
+                <li><a href="ex21.html#">21</a></li>
+                <li><a href="ex22.html#">22</a></li>
+                <li><a href="ex23.html#">23</a></li>
+                <li><a href="ex24.html#">24</a></li>
+                <li><a href="ex25.html#">25</a></li>
+                <li><a href="ex26.html#">26</a></li>
+                <li><a href="ex27.html#">27</a></li>
+                <li><a href="ex28.html#">28</a></li>
+                <li><a href="ex29.html#">29</a></li>
+                <li><a href="ex30.html#">30</a></li>
+                <li><a href="ex31.html#">31</a></li>
+                <li><a href="ex32.html#">32</a></li>
+                <li><a href="ex33.html#">33</a></li>
+                <li><a href="ex34.html#">34</a></li>
+                <li><a href="ex35.html#">35</a></li>
+                <li><a href="ex36.html#">36</a></li>
+                <li><a href="ex37.html#">37</a></li>
+                <li><a href="ex38.html#">38</a></li>
+                <li><a href="ex39.html#">39</a></li>
+                <li><a href="ex40.html#">40</a></li>
+                <li><a href="ex41.html#">41</a></li>
+                <li><a href="ex42.html#">42</a></li>
+                <li><a href="ex43.html#">43</a></li>
+                <li><a href="ex44.html#">44</a></li>
+                <li><a href="ex45.html#">45</a></li>
+                <li><a href="ex46.html#">46</a></li>
+                <li><a href="ex47.html#">47</a></li>
+                <li><a href="ex48.html#">48</a></li>
+                <li><a href="ex49.html">49</a></li>
+                <li><a href="ex50.html">50</a></li>
+                <li><a href="ex51.html">51</a></li>
+                <li><a href="ex52.html">52</a></li>
+                <li><a href="next.html">下一步</a></li>
+                <li><a href="advice.html">老程序员的建议</a></li>
+                </li>
+            </ul>
+        </nav>
+      <footer>
+          <p>&copy; Company 2015  <img src="http://youanan.qiniudn.com/youanan.com/youananemail.png"  alt="联系我" border="0"></p>
+      </footer>
+
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+    <script src="../../jquery/1.11.2/jquery.min.js"></script>
+    <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"> -->
+    <script type="text/javascript" src="http://cdn.bootcss.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../js/panel/python_panel.js"></script>
+    <script type="text/javascript" src="../../js/google-code-prettify/prettify.js"></script>
+  </body>
+</html>
+

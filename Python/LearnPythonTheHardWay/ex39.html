@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <title>习题 39: 列表的操作</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="this is youanan's wiki, design by vimwiki">
+    <meta name="author" content="youanan">
+    <link rel="shortcut icon" href="../../favicon.ico">
+
+    <!-- Bootstrap core CSS -->
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.2/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <!--local Bootstrap core CSS -->
+    <link href="../../bootstrap/3.3.2/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+
+
+    <!--local google-code-prettify.CSS -->
+    <link href="../../css/prettify.css" type="text/css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../../css/starter-template.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="http://youanan.com">youanan</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="../../index.html">Home</a></li>
+            <li><a href="../../diary/diary.html">Diary</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="starter-template">
+        
+<h1 id="toc_1">习题 39: 列表的操作</h1>
+
+<p>
+你已经学过了列表。在你学习“while 循环”的时候，你对列表进行过“追加(append)”操作，而且将列表的内容打印了出来。另外你应该还在加分习题里研究过 Python 文档，看了列表支持的其他操作。这已经是一段时间以前了，所以如果你不记得了的话，就回到本书的前面再复习一遍把。
+</p>
+
+<p>
+找到了吗？还记得吗？很好。那时候你对一个列表执行了 append 函数。不过，你也许还没有真正明白发生的事情，所以我们再来看看我们可以对列表进行什么样的操作。
+</p>
+
+<p>
+当你看到像 mystuff.append('hello') 这样的代码时，你事实上已经在 Python 内部激发了一个连锁反应。以下是它的工作原理：
+</p>
+
+<ol>
+<li>
+Python 看到你用到了 mystuff ，于是就去找到这个变量。也许它需要倒着检查看你有没有在哪里用 = 创建过这个变量，或者检查它是不是一个函数参数，或者看它是不是一个全局变量。不管哪种方式，它得先找到 mystuff 这个变量才行。
+
+<li>
+一旦它找到了 mystuff ，就轮到处理句点 . (period) 这个操作符，而且开始查看 mystuff 内部的一些变量了。由于 mystuff 是一个列表，Python 知道mystuff 支持一些函数。
+
+<li>
+接下来轮到了处理 append 。Python 会将 “append” 和 mystuff 支持的所有函数的名称一一对比，如果确实其中有一个叫 append 的函数，那么 Python 就会去使用这个函数。
+
+<li>
+接下来 Python 看到了括号 ( (parenthesis) 并且意识到, “噢，原来这应该是一个函数”，到了这里，它就正常会调用这个函数了，不过这里的函数还要多一个参数才行。
+
+<li>
+这个额外的参数其实是…… mystuff! 我知道，很奇怪是不是？不过这就是 Python 的工作原理，所以还是记住这一点，就当它是正常的好了。真正发生的事情其实是 append(mystuff, 'hello') ，不过你看到的只是 mystuff.append('hello') 。
+
+</ol>
+
+<p>
+大部分时候你不需要知道这些细节，不过如果你看到一个像这样的 Python 错误信息的时候，上面的细节就对你有用了：
+</p>
+
+<pre>
+$ python
+Python 2.6.5 (r265:79063, Apr 16 2010, 13:57:41)
+[GCC 4.4.3] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+&gt;&gt;&gt; class Thing(object):
+...     def test(hi):
+...             print "hi"
+...
+&gt;&gt;&gt; a = Thing()
+&gt;&gt;&gt; a.test("hello")
+Traceback (most recent call last):
+  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
+TypeError: test() takes exactly 1 argument (2 given)
+&gt;&gt;&gt;
+</pre>
+
+<p>
+就是这个吗？嗯，这个是我在 Python 命令行下展示给你的一点魔法。你还没有见过class 不过后面很快就要碰到了。现在你看到 Python 说 test() takes exactly 1 argument (2 given) (test() 只可以接受1个参数，实际上给了两个)。它意味着 python 把 a.test("hello") 改成了 test(a, "hello") ，而有人弄错了，没有为它添加 a 这个参数。
+</p>
+
+<p>
+一下子要消化这么多可能有点难度，不过我们将做几个练习，让你头脑中有一个深刻的印象。下面的练习将字符串和列表混在一起，看看你能不能在里边找出点乐子来：
+</p>
+
+<pre>
+ten_things = "Apples Oranges Crows Telephone Light Sugar"
+
+print "Wait there's not 10 things in that list, let's fix that."
+
+stuff = ten_things.split(' ')
+more_stuff = ["Day", "Night", "Song", "Frisbee", "Corn", "Banana", "Girl", "Boy"]
+
+while len(stuff) != 10:
+    next_one = more_stuff.pop()
+    print "Adding: ", next_one
+    stuff.append(next_one)
+    print "There's %d items now." % len(stuff)
+
+print "There we go: ", stuff
+
+print "Let's do some things with stuff."
+
+print stuff[1]
+print stuff[-1] # whoa! fancy
+print stuff.pop()
+print ' '.join(stuff) # what? cool!
+print '#'.join(stuff[3:5]) # super stellar!
+</pre>
+
+<h2 id="toc_1.1">你应该看到的结果</h2>
+
+<pre>
+$ python ex39.py
+
+Wait there's not 10 things in that list, let's fix that.
+Adding:  Boy
+There's 7 items now.
+Adding:  Girl
+There's 8 items now.
+Adding:  Banana
+There's 9 items now.
+Adding:  Corn
+There's 10 items now.
+There we go:  ['Apples', 'Oranges', 'Crows', 'Telephone', 'Light', 'Sugar',
+      'Boy', 'Girl', 'Banana', 'Corn']
+Let's do some things with stuff.
+Oranges
+Corn
+Corn
+Apples Oranges Crows Telephone Light Sugar Boy Girl Banana
+Telephone#Light
+</pre>
+
+<h2 id="toc_1.2">加分习题</h2>
+
+<ol>
+<li>
+将每一个被调用的函数以上述的方式翻译成 Python 实际执行的动作。例如： ' '.join(things) 其实是 join(' ', things) 。
+
+<li>
+将这两种方式翻译为自然语言。例如， ' '.join(things) 可以翻译成“用 ‘ ‘ 连接(join) things”，而 join(' ', things) 的意思是“为 ‘ ‘ 和 things 调用 join 函数”。这其实是同一件事情。
+
+<li>
+上网阅读一些关于“面向对象编程(Object Oriented Programming)”的资料。晕了吧？嗯，我以前也是。别担心。你将从这本书学到足够用的关于面向对象编程的基础知识，而以后你还可以慢慢学到更多。
+
+<li>
+查一下 Python中的 “class” 是什么东西。不要阅读关于其他语言的 “class” 的用法，这会让你更糊涂。
+
+<li>
+dir(something) 和 something 的 class 有什么关系？
+
+<li>
+如果你不知道我讲的是些什么东西，别担心。程序员为了显得自己聪明，于是就发明了 Object Oriented Programming，简称为 OOP，然后他们就开始滥用这个东西了。如果你觉得这东西太难，你可以开始学一下 “函数编程(functional programming)”。
+
+</ol>
+
+        
+      </div>
+        <nav>
+            <ul class="pagination">
+                <li><a href="intro_zh.html">译者前言</a></li>
+                <li><a href="intro.html">前言</a></li>
+                <li><a href="ex1.html">1</a></li>
+                <li><a href="ex2.html">2</a></li>
+                <li><a href="ex3.html">3</a></li>
+                <li><a href="ex4.html">4</a></li>
+                <li><a href="ex5.html">5</a></li>
+                <li><a href="ex6.html">6</a></li>
+                <li><a href="ex7.html">7</a></li>
+                <li><a href="ex8.html">8</a></li>
+                <li><a href="ex9.html">9</a></li>
+                <li><a href="ex10.html">10</a></li>
+                <li><a href="ex11.html">11</a></li>
+                <li><a href="ex12.html">12</a></li>
+                <li><a href="ex13.html">13</a></li>
+                <li><a href="ex14.html#">14</a></li>
+                <li><a href="ex15.html#">15</a></li>
+                <li><a href="ex16.html#">16</a></li>
+                <li><a href="ex17.html#">17</a></li>
+                <li><a href="ex18.html#">18</a></li>
+                <li><a href="ex19.html#">19</a></li>
+                <li><a href="ex20.html#">20</a></li>
+                <li><a href="ex21.html#">21</a></li>
+                <li><a href="ex22.html#">22</a></li>
+                <li><a href="ex23.html#">23</a></li>
+                <li><a href="ex24.html#">24</a></li>
+                <li><a href="ex25.html#">25</a></li>
+                <li><a href="ex26.html#">26</a></li>
+                <li><a href="ex27.html#">27</a></li>
+                <li><a href="ex28.html#">28</a></li>
+                <li><a href="ex29.html#">29</a></li>
+                <li><a href="ex30.html#">30</a></li>
+                <li><a href="ex31.html#">31</a></li>
+                <li><a href="ex32.html#">32</a></li>
+                <li><a href="ex33.html#">33</a></li>
+                <li><a href="ex34.html#">34</a></li>
+                <li><a href="ex35.html#">35</a></li>
+                <li><a href="ex36.html#">36</a></li>
+                <li><a href="ex37.html#">37</a></li>
+                <li><a href="ex38.html#">38</a></li>
+                <li><a href="ex39.html#">39</a></li>
+                <li><a href="ex40.html#">40</a></li>
+                <li><a href="ex41.html#">41</a></li>
+                <li><a href="ex42.html#">42</a></li>
+                <li><a href="ex43.html#">43</a></li>
+                <li><a href="ex44.html#">44</a></li>
+                <li><a href="ex45.html#">45</a></li>
+                <li><a href="ex46.html#">46</a></li>
+                <li><a href="ex47.html#">47</a></li>
+                <li><a href="ex48.html#">48</a></li>
+                <li><a href="ex49.html">49</a></li>
+                <li><a href="ex50.html">50</a></li>
+                <li><a href="ex51.html">51</a></li>
+                <li><a href="ex52.html">52</a></li>
+                <li><a href="next.html">下一步</a></li>
+                <li><a href="advice.html">老程序员的建议</a></li>
+                </li>
+            </ul>
+        </nav>
+      <footer>
+          <p>&copy; Company 2015  <img src="http://youanan.qiniudn.com/youanan.com/youananemail.png"  alt="联系我" border="0"></p>
+      </footer>
+
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+    <script src="../../jquery/1.11.2/jquery.min.js"></script>
+    <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"> -->
+    <script type="text/javascript" src="http://cdn.bootcss.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../js/panel/python_panel.js"></script>
+    <script type="text/javascript" src="../../js/google-code-prettify/prettify.js"></script>
+  </body>
+</html>
+
