@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
   <head>
-    <title>Git专题</title>
+    <title>git</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -36,11 +36,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="">youanan</a>
+          <a class="navbar-brand" href="http://youanan.com">youanan</a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="">Home</a></li>
+            <li class="active"><a href="index.html">Home</a></li>
             <li><a href="diary/diary.html">Diary</a></li>
           </ul>
         </div><!--/.nav-collapse -->
@@ -50,190 +50,12 @@
     <div class="container">
 
       <div class="starter-template">
-        
-<h1 id="toc_1">git</h1>
-<hr />
-<h2 id="toc_1.1">git本地设置</h2>
-<p>
-git安装完成后的操作
-</p>
-<ol>
-<li>
-设置config信息
 
-<ol>
-<li>
-<code>git config --global user.name "yourname"</code> <em>//设置用户名称</em>
+<h1 id="toc_1"> git</h1>
 
-<li>
-<code>git config --global user.email "youremail"</code>` <em>//设置用户邮箱</em>
-
-<li>
-<code>git config --list</code>  <em>//查看config配置的信息</em>
-
-</ol>
-<li>
-设置SSH keys文件
-
-<ol>
-<li>
-首先检测文件是否存在，如存则跳过此步骤
-
-<ul>
-<li>
-<code>cd ~/.ssh</code> <em>//进入ssh文件夹</em>
-
-<li>
-<code>ls</code>  <em>//查看文件夹内有哪些文件，关键是找.rsa文件</em>
-
-</ul>
-<li>
-将原来的SSH keys备份并删除
-
-<ul>
-<li>
-<code>mkdir key_backup</code>    <em>新建一个key</em>_<em>backup的文件夹s</em>
-
-<li>
-<code>cp id_rsa* key_backup</code> <em>//复制id</em>_<em>rsa开头的文件到key</em>_<em>backup文件夹内</em> 
-
-<li>
-<code>rm id_rsa*</code>  <em>//删除现有id</em>_<em>rsa开头的文件</em>
-
-</ul>
-<li>
-创建一个新的SSH key
-
-<ul>
-<li>
-<code>ssh-keygen -t rsa -C "yourgithub's email"</code>
-
-<li>
- <em>//回车，默认</em>
-
-<li>
- <em>//回车，使用默认路径</em>
-
-<li>
- <em>//输入key密码,不输入回车则不需要密码</em>
-
-</ul>
-<li>
-将is_rsa.pub的内容复制到github&gt;settings&gt;SSH keys中
-
-<li>
-测试是否可以与github正确连接
-
-<ul>
-<li>
-<code>ssh -T git@github.com</code> <em>//出现Hi......开头的英文，就是连接正常</em>
-
-</ul>
-</ol>
-</ol>
-<h2 id="toc_1.2">git的常用命令</h2>
-<ol>
-<li>
-status : <em>//查看本地的修改状态</em>
-
-<li>
-add .  : <em>//将所有文件添加到列队中</em>
-
-<li>
-git commit -m "xx"  :<em>//提交修改备注</em>
-
-<li>
-git push origin gh-pages :<em>//上传到网上的分支</em>
-
-<li>
-git remote add origin git@github.com:youanan/wiki.git <em>//将远程 <strong>git地址</strong> 更名为 <strong>origin</strong> 简称，</em>
-
-</ol>
-
-<hr />
-<h2 id="toc_1.3">git config list</h2>
-<ol>
-<li>
-core.symlinks=false
-
-<li>
-core.autocrlf=ture
-
-<li>
-color.diff=auto
-
-<li>
-color.status=auto
-
-<li>
-color.branch=auto
-
-<li>
-color.interactive=true
-
-<li>
-pack.packsizelimit=2g
-
-<li>
-help.format=html
-
-<li>
-http.sslcainfo=/bin/curl-ca-bundle.crt
-
-<li>
-sendemail.smtpserver=/bin/msmtp.exe
-
-<li>
-diff.astextplain.textconv=astextplain
-
-<li>
-rebase.autosquash=true
-
-<li>
-user.email="email"
-
-<li>
-user.name="name"
-
-<li>
-core.repositoryformatversion=0
-
-<li>
-core.filemode=false
-
-<li>
-core.bare=false
-
-<li>
-core.logallrefupdates=true
-
-<li>
-core.symlinks=false
-
-<li>
-core.ignorecase=true
-
-<li>
-core.hidedotfiles=dotGitOnly
-
-<li>
-remote.origin.url="git@github.com:xxxxx/xxx.git"
-
-<li>
-remote.origin.fetch=+refs/head\*<strong>:refs/remotes/origin\</strong>
-
-<li>
-branch.gh-pages.remote=origin
-
-<li>
-branch.gh-pages.merge=refs/heads/gh-pages
-
-</ol>
-
-        
       </div>
       <footer>
-          <p>&copy; Company 2014  <img src="http://youanan.qiniudn.com/youanan.com/youananemail.png"  alt="联系我" border="0"></p>
+          <p>&copy; Company 2015  <img src="http://youanan.qiniudn.com/youanan.com/youananemail.png"  alt="联系我" border="0"></p>
       </footer>
 
     </div><!-- /.container -->
