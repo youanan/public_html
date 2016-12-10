@@ -11,16 +11,6 @@
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script>
-var url_1="http://www.wmxz.wang/video.php?url="
-var url_2="http://www.yydy8.com/common/?url="
-var url_4="http://5qiyi.sdyhy.cn/5qiyi/5qiyi1.php?url="
-var url_5="http://5qiyi.sdyhy.cn/5qiyi/5qiyi2.php?url="
-var url_6="http://vip.sdyhy.cn/ckflv/?url="
-var url_7="http://player.gakui.top/?url="
-var url_8="http://mt2t.com/yun?url="
-var url_9="http://qtzr.net/s/?qt="
-var url_10="http://www.xiguaso.com/api/index.php?url="
-var url_11="http://www.vipjiexi.com/yun.php?url="
 
 function Radios()
 {
@@ -30,7 +20,6 @@ function Radios()
         {
             if(Radioes[i].checked==true)
             {
-
                 document.getElementById("video_iframe").src =Radioes[i].value+newurl;
             }
         }
@@ -44,9 +33,9 @@ function Radios()
 
 <div style="overflow:hidden; margin: 0 auto; width:800px;padding:10px">
     <input type="url" id="link" class="form-control" placeholder="粘贴视频网址">
-	<span>解析接口</span>
+	<span>选择接口</span>
 <label class="radio-inline">
-  <input type="radio" name="inlineRadioOptions" value="http://www.wmxz.wang/video.php?url=" > 1
+  <input type="radio" name="inlineRadioOptions" value="http://www.wmxz.wang/video.php?url=" checked="checked"> 1
 </label>
 <label class="radio-inline">
   <input type="radio" name="inlineRadioOptions" value="http://www.yydy8.com/common/?url="> 2
@@ -75,10 +64,30 @@ function Radios()
 <label class="radio-inline">
   <input type="radio" name="inlineRadioOptions" value="http://www.vipjiexi.com/yun.php?url="> 10
 </label>
-<button type="button" class="btn btn-default btn-lg" onclick="Radios();">提交视频地址</button>
+<label class="radio-inline">
+  <input type="radio" name="inlineRadioOptions" value="http://jx.71ki.com/index.php?url="> 11
+</label>
+<label class="radio-inline">
+  <input type="radio" name="inlineRadioOptions" value="http://moon.moondown.net/tong.php?url="> 12
+</label>
+<label class="radio-inline">
+  <input type="radio" name="inlineRadioOptions" value="http://www.97zxkan.com/jiexi/97zxkanapi.php?url="> 13
+</label>
+<label class="radio-inline">
+  <input type="radio" name="inlineRadioOptions" value="http://yun.zihu.tv/play.html?url="> 14
+</label>
+<button type="button" class="btn btn-default btn-lg" onclick="Radios();">播放</button>
+<p>支持:
+  <a href="http://www.iqiyi.com" target="_blank">爱奇艺</a>
+  <a href="http://www.youku.com" target="_blank">优酷</a>
+  <a href="http://www.le.com" target="_blank">乐视</a>
+  <a href="http://www.mgtv.com" target="_blank">芒果TV</a>
+  <a href="http://v.qq.com" target="_blank">腾讯视频</a>
+</p>
+
 </div>
-<div style="overflow:hidden; margin: 0 auto; width:800px;">
-   <iframe id="video_iframe" src = "img/tv.jpg" style="height:600px;width:800px;frameborder:0;marginheight:0px;marginwidth:0px;background:#000000;border:2px solid #00a0e9">
+<div style="overflow:hidden; margin: 0 auto; width:800px;height:600px;">
+   <iframe id="video_iframe" src = "" style="height:528px;width:790px;frameborder:0;marginheight:0px;marginwidth:0px;background:#000000;border:2px solid #00a0e9">
    </iframe>
 </div >
 
