@@ -6,6 +6,13 @@
 body {
   padding-top: 20px;
 }
+p {
+  text-indent:2em
+}
+a {
+  padding-left: 10px;
+  padding-right: 10px;
+}
 .starter-template {
   padding: 20px 15px;
   text-align: left;
