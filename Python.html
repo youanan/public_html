@@ -1,20 +1,16 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
   <head>
-    <title>Python</title>
     <meta charset="utf-8">
+    <title>python</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="this is youanan's wiki, design by vimwiki">
     <meta name="author" content="youanan">
     <link rel="shortcut icon" href="favicon.ico">
 
-    <!-- Bootstrap core CSS -->
-    <link href="http://cdn.bootcss.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
     <!--local Bootstrap core CSS -->
     <link href="bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
-
 
     <!-- Custom styles for this template -->
     <link href="css/starter-template.css" rel="stylesheet">
@@ -38,6 +34,7 @@
           </button>
           <a class="navbar-brand" href="http://youanan.com">youanan</a>
         </div>
+
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="index.html">Home</a></li>
@@ -48,28 +45,46 @@
     </div>
 
     <div class="container">
-
       <div class="starter-template">
-        
+
+       
+<div id="python"><h1 id="python">python</h1></div>
+<hr />
+
+<div id="python-python2"><h2 id="python2">python2</h2></div>
 <ul>
 <li>
-<a href="Python/LearnPythonTheHardWay.html">笨方法学python</a>
+默认文件内存字符串编码为ASCII,需在首行声明解释器编码
 
 <li>
-<a href="Python/true.html">python真值表</a>
+首行声明gbk或UTF-8，python2解释器仅以声明的编码去解释文件代码,加载到内存后，并不会主动帮忙转换成unicode,也就是说,如果你的文件编码声明是utf-8,加载到内存里，你的变量字符串也是utf-8，在windows gbk环境下,直接输出utf-8就乱码了.
 
 <li>
-<a href="python/web_framework.html">python web 框架</a>
+ 手动解码:  utf-8  --&gt;  decode 解码  --&gt;  Unicode
+
+<li>
+ 手动转码:  Unicode  --&gt;  encode 编码  --&gt; GBK / utf-8 ......
+
+<li>
+
 
 </ul>
-<p>
-python 
-</p>
 
-        
+
+<div id="python-python3"><h2 id="python3">python3</h2></div>
+<ul>
+<li>
+默认文件内存字符串编码为UTF-8,可不用在首行声明解释器编码
+
+<li>
+UTF-8编码，在windows gbk的终端下能正常显示，是因为python解释器会自动把字符串转成了unicode
+
+</ul>
+
+       
       </div>
       <footer>
-          <p>&copy; Company 2015  <img src="http://youanan.qiniudn.com/youanan.com/youananemail.png"  alt="联系我" border="0"></p>
+        <p>&copy; Copyright 2016  <img src="http://youanan.qiniudn.com/youanan.com/youananemail.png"  alt="联系我" border="0"></p>
       </footer>
 
     </div><!-- /.container -->
@@ -78,10 +93,8 @@ python
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
     <script src="jquery/1.11.2/jquery.min.js"></script>
     <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"> -->
-    <script type="text/javascript" src="http://cdn.bootcss.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/Custom_styles/mystyle.js"></script>
   </body>
